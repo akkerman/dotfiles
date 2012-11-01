@@ -1,0 +1,3 @@
+#!/bin/bash
+rm /tmp/.X11-unix/X$1
+rm /tmp/.X$1-lock

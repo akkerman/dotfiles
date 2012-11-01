@@ -1,0 +1,1 @@
+vncserver -geometry 1280x1024 :30
