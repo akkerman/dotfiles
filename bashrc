@@ -1,3 +1,5 @@
+alias l='ls -la' 
+
 export JAVA_HOME=/opt2/java
 export PATH=$JAVA_HOME/bin:$PATH
 export ANT_HOME=/opt2/ant
