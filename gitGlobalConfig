@@ -1,3 +1,4 @@
 git config --global user.email "ikbenmarcelakkerman@hotmail.com"
 git config --global user.name "Marcel Akkerman" 
 git config --global core.editor vi
+git config --global push.default simple
