@@ -18,8 +18,6 @@ role=$1
 #         meta/             #
 #             main.yml      #  <-- role dependencies
 
-
-
 parts=(
     'tasks',true 
     'handlers',true 
@@ -33,21 +31,20 @@ scaffold() {
     for tuple in "${parts[@]}" 
     do
         set $tuple;
-        create_directory $1 $2
+        part=$1
+        hasMain=$2
+        create_directory
     done 
 }
 
 create_directory() {
-    part=$1; hasMain=$2    
     printf -v dir "roles/%s/%s" $role $part
     mkdir -p $dir
-
-    create_main_yml $dir $hasMain
+    create_main_yml
 }
 
 create_main_yml() {
-    dir=$1    
-    if [ $2 ] ; then        
+    if [ $hasMain == true ] ; then        
         printf -v file "%s/main.yml" $dir
         printf -v header "# file: %s" $file
         echo "---" > $file
