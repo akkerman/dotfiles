@@ -18,7 +18,7 @@ role=$1
 #         meta/             #
 #             main.yml      #  <-- role dependencies
 
-OLDIFS=$IFS; IFS=',';
+
 
 parts=(
     'tasks',true 
@@ -29,20 +29,32 @@ parts=(
     'meta',true
 )
 
-for tuple in "${parts[@]}" 
-do
-    set $tuple; part=$1; hasMain=$2    
-    printf -v dir "roles/%s/%s" $role $part
-    printf -v file "%s/main.yml" $dir
-    printf -v header "# file: %s" $file
+scaffold() {
+    for tuple in "${parts[@]}" 
+    do
+        set $tuple;
+        create_directory $1 $2
+    done 
+}
 
+create_directory() {
+    part=$1; hasMain=$2    
+    printf -v dir "roles/%s/%s" $role $part
     mkdir -p $dir
 
-    if [ $hasMain ] 
-        then
-            echo "---" > $file
-            echo $header >> $file
-    fi
-done
+    create_main_yml $dir $hasMain
+}
 
+create_main_yml() {
+    dir=$1    
+    if [ $2 ] ; then        
+        printf -v file "%s/main.yml" $dir
+        printf -v header "# file: %s" $file
+        echo "---" > $file
+        echo $header >> $file
+    fi    
+}
+
+OLDIFS=$IFS; IFS=',';
+scaffold
 IFS=$OLDIFS
