@@ -1,0 +1,13 @@
+
+case $1 in
+   wake)
+	sudo etherwake -b -i eth0 94:de:80:6c:a8:95
+	sudo etherwake -b -i wlan0 94:de:80:6c:a8:95
+	;;
+   sleep)
+	ssh octotron -f /home/akkerman/bin/suspend.sh
+	;;
+   *)
+	echo "usage: $0 [wake|sleep]"
+	exit 1
+esac
