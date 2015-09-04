@@ -1,4 +1,4 @@
-alias l='ls -la' 
+alias l=' ls -la' 
 
 
 export PATH=/home/akkerman/bin:$PATH
