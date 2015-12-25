@@ -1,7 +1,7 @@
 # Files related to [VIM](http://www.vim.org/about.php)
 
 ## installation
-git clone <url> ~/.vim/
+git clone 'url' ~/.vim/
 
 ## .vimrc
 A custom .vimrc is normally stored at ~/.vimrc, but aparently VIM also
