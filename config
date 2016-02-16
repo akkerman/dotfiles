@@ -161,3 +161,6 @@ bar {
 # lock screen
 bindsym $mod+l exec i3lock -c 000000
 
+# Get Rid of Desktop Window While Launching Nautilus
+exec settings set org.gnome.desktop.background show-desktop-icons false
+
