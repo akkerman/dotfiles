@@ -83,8 +83,8 @@ bindsym $mod+a focus parent
 # define workspaces
 set $workspace1 "1: "
 set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
+set $workspace3 "3: "
+set $workspace4 "4: "
 set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7: "
@@ -164,4 +164,14 @@ exec nm-applet
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master 0% unmute
+
+# auto assign to workspace
+assign [class="Spotify"] $workspace10
+assign [class="jetbrains-idea"] $workspace4
+assign [class="GitKraken"] $workspace3
+
+# open on startup
+exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal;workspace $workspace2; exec google-chrome'
+exec --no-startup-id i3-msg 'exec spotify'
+exec --no-startup-id i3-msg 'exec gitkraken'
 
