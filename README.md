@@ -2,6 +2,6 @@
 
 ## installation
 
-clone into .i3 
+clone into directory ~/.i3/
 
-create link: ln -s ~/.i3/i3status.conf ~/.i3status
+create link: ln -s ~/.i3/i3status.conf ~/.i3status.conf
