@@ -29,16 +29,16 @@
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
-
+    
     " unicode symbols
     let g:airline_left_sep = '»'
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '«'
     let g:airline_right_sep = '◀'
     let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '␊'
+    "let g:airline_symbols.linenr = '␊'
     let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
+    "let g:airline_symbols.linenr = '¶'
     let g:airline_symbols.maxlinenr = '☰'
     let g:airline_symbols.maxlinenr = ''
     let g:airline_symbols.branch = '⎇'
@@ -57,6 +57,11 @@
     let g:airline_symbols.branch = ''
     let g:airline_symbols.readonly = ''
 
+
+" colors
+    syntax enable
+    set background=dark
+
 " statusline (vim-airline)
     set laststatus=2 " always on
     let g:airline#extensions#tabline#enabled = 1
@@ -65,9 +70,6 @@
     set tabstop=4    " show existing tabs as 4 spaces
     set shiftwidth=4 " indent 4 spaces with '>'
     set expandtab    " insert 4 spaces when pressing tab
-
-" colors
-    set background=dark
 
 " new files
     augroup newfile
@@ -78,4 +80,5 @@
 
 " hybrid linenumbers
     set relativenumber
-    set number
+    set number 
+
