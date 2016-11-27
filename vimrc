@@ -19,6 +19,7 @@
 
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
+        Plugin 'altercation/vim-colors-solarized'
 
         Plugin 'tpope/vim-fugitive' " for git branch
 
@@ -33,6 +34,9 @@
 " colors
     syntax enable
     set background=dark
+"    set t_Co=16 " set colors of terminal
+"    let g:solarized_termcolors=256
+    color solarized
 
 " statusline (vim-airline)
     set laststatus=2 " always on
