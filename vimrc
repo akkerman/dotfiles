@@ -24,7 +24,7 @@
     call vundle#end()             " required for vundle
 
     filetype plugin indent on     " required for vundle
- 
+
 " airline symbols
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
@@ -57,6 +57,10 @@
     let g:airline_symbols.branch = ''
     let g:airline_symbols.readonly = ''
 
+" statusline (vim-airline)
+    set laststatus=2 " always on
+    let g:airline#extensions#tabline#enabled = 1
+
 " tabs
     set tabstop=4    " show existing tabs as 4 spaces
     set shiftwidth=4 " indent 4 spaces with '>'
@@ -72,6 +76,3 @@
       autocmd BufNewFile *.html     0r ~/.vim/template/html
     augroup END
 
-" statusline (vim-airline)
-    set laststatus=2 " always on
-    let g:airline#extensions#tabline#enabled = 1
