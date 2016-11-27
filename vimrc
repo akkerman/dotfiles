@@ -34,8 +34,8 @@
 " colors
     syntax enable
     set background=dark
-"    set t_Co=16 " set colors of terminal
-"    let g:solarized_termcolors=256
+    "set t_Co=16 " set colors of terminal
+    "let g:solarized_termcolors=256
     color solarized
 
 " statusline (vim-airline)
