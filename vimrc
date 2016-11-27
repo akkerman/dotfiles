@@ -59,3 +59,6 @@
     set relativenumber
     set number 
 
+" finding files # https://www.youtube.com/watch?v=XA2WjJbmmoM
+    set path+=**
+    set wildmenu
