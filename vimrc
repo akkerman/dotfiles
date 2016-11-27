@@ -22,6 +22,7 @@
         Plugin 'altercation/vim-colors-solarized'
 
         Plugin 'tpope/vim-fugitive' " for git branch
+        Plugin 'edkolev/tmuxline.vim' " for tmux status line
 
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
@@ -34,7 +35,7 @@
 " colors
     syntax enable
     set background=dark
-    "set t_Co=16 " set colors of terminal
+    set t_Co=16 " set colors of terminal
     "let g:solarized_termcolors=256
     color solarized
 
