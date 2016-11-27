@@ -75,7 +75,3 @@
 " statusline (vim-airline)
     set laststatus=2 " always on
     let g:airline#extensions#tabline#enabled = 1
-
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-:iabbrev </ </<C-X><C-O>
