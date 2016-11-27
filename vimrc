@@ -76,3 +76,6 @@
       autocmd BufNewFile *.html     0r ~/.vim/template/html
     augroup END
 
+" hybrid linenumbers
+    set relativenumber
+    set number
