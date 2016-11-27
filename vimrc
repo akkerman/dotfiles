@@ -1,3 +1,7 @@
+" install:
+" % git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" % vim +PluginInstall +qall
+
 
 " vundle
     set nocompatible              " be iMproved, required for vundle
