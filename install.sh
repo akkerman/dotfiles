@@ -5,3 +5,5 @@ mkdir -p ~/.fonts/ && cd "$_"
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 mkdir -p ~/.config/fontconfig/config.d && cd "$_"
 wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+ln -s ~/.config/fontconfig/config.d ~/.fontconfig
+fc-cache -f -v ~/.fonts/
