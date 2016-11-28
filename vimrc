@@ -13,7 +13,7 @@
         Plugin 'vim-airline/vim-airline-themes'
         Plugin 'altercation/vim-colors-solarized'
 
-        Plugin 'tpope/vim-fugitive' " for git branch
+        Plugin 'tpope/vim-fugitive' " for git commands and branch in statusbar
         Plugin 'edkolev/tmuxline.vim' " for tmux status line
 
         " All of your Plugins must be added before the following line
