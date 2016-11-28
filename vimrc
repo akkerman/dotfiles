@@ -1,11 +1,3 @@
-" install:
-" % git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" % vim +PluginInstall +qall
-" % mkdir -p ~/.fonts/ && cd "$_"
-" % wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-" % mkdir -p ~/.config/fontconfig/config.d && cd "$_"
-" % wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-" % fc-cache -vf ~/.fonts/
 
 " vundle
     set nocompatible              " be iMproved, required for vundle
@@ -21,7 +13,7 @@
         Plugin 'vim-airline/vim-airline-themes'
         Plugin 'altercation/vim-colors-solarized'
 
-        Plugin 'tpope/vim-fugitive' " for git branch
+        Plugin 'tpope/vim-fugitive' " for git commands and branch in statusbar
         Plugin 'edkolev/tmuxline.vim' " for tmux status line
 
         " All of your Plugins must be added before the following line
@@ -37,7 +29,7 @@
     set background=dark
     set t_Co=16 " set colors of terminal
     "let g:solarized_termcolors=256
-    color solarized
+    silent! colorscheme solarized
 
 " statusline (vim-airline)
     set laststatus=2 " always on
