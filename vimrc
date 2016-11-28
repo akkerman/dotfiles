@@ -29,7 +29,7 @@
     set background=dark
     set t_Co=16 " set colors of terminal
     "let g:solarized_termcolors=256
-    color solarized
+    silent! colorscheme solarized
 
 " statusline (vim-airline)
     set laststatus=2 " always on
