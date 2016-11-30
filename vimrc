@@ -1,4 +1,3 @@
-
 " vundle
     set nocompatible              " be iMproved, required for vundle
     filetype off                  " required for vundle
@@ -51,7 +50,7 @@
 
 " hybrid linenumbers
     set relativenumber
-    set number 
+    set number
 
 " finding files # https://www.youtube.com/watch?v=XA2WjJbmmoM
     set path+=**
