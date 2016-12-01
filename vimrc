@@ -1,4 +1,3 @@
-
 " vundle
     set nocompatible              " be iMproved, required for vundle
     filetype off                  " required for vundle
@@ -15,6 +14,8 @@
 
         Plugin 'tpope/vim-fugitive' " for git commands and branch in statusbar
         Plugin 'edkolev/tmuxline.vim' " for tmux status line
+
+        Plugin 'tmux-plugins/vim-tmux' " syntax + more (shif+K for help e.g.)
 
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
@@ -49,7 +50,7 @@
 
 " hybrid linenumbers
     set relativenumber
-    set number 
+    set number
 
 " finding files # https://www.youtube.com/watch?v=XA2WjJbmmoM
     set path+=**
