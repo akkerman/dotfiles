@@ -15,7 +15,7 @@
         Plugin 'tpope/vim-fugitive' " for git commands and branch in statusbar
         Plugin 'edkolev/tmuxline.vim' " for tmux status line
 
-        Plugin 'tmux-plugins/vim-tmux'
+        Plugin 'tmux-plugins/vim-tmux' " syntax + more (shif+K for help e.g.)
 
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
