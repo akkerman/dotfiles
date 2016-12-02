@@ -17,6 +17,9 @@
 
         Plugin 'tmux-plugins/vim-tmux' " syntax + more (shif+K for help e.g.)
 
+        Plugin 'ternjs/tern_for_vim' " code-analysis engine for JavaScript
+        Plugin 'Valloric/YouCompleteMe' " code-completion engine for Vim
+
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
 
