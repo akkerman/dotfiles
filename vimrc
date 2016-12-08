@@ -22,6 +22,8 @@
 
         Plugin 'vim-syntastic/syntastic'
 
+        Plugin 'gisphm/vim-gitignore'
+
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
 
