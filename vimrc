@@ -51,7 +51,7 @@
 
 " new files
     augroup newfile
-      au!
+      autocmd!
       autocmd BufNewFile Dockerfile 0r ~/.vim/template/Dockerfile
       autocmd BufNewFile *.html     0r ~/.vim/template/html
     augroup END
@@ -81,5 +81,7 @@
     let g:netrw_liststyle=3 " treeview
 
 " automate stuff
-    autocmd bufwritepost vimrc source $MYVIMRC " source vimrc after saving
-
+    augroup reload_vimrc
+        autocmd!
+        autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
+    augroup END
