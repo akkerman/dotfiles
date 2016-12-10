@@ -23,6 +23,7 @@
         Plugin 'vim-syntastic/syntastic'
 
         Plugin 'gisphm/vim-gitignore'
+        Plugin 'wikitopian/hardmode'
 
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
@@ -78,3 +79,7 @@
     let g:netrw_banner=1
     let g:netrw_list_hide=netrw_gitignore#Hide()
     let g:netrw_liststyle=3 " treeview
+
+" automate stuff
+    autocmd bufwritepost vimrc source $MYVIMRC " source vimrc after saving
+
