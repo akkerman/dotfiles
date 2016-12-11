@@ -67,14 +67,7 @@
     set wildmenu
 
 " syntax checking
-    if !exists("g:append2statusline")
-        " otherwise the status line gets messed up after re-sourcing it
-        let g:append2statusline = "done"
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
-    endif
-
+    let g:airline#extensions#syntastic#enabled = 1
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
