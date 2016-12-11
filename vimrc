@@ -55,6 +55,7 @@
       autocmd!
       autocmd BufNewFile Dockerfile 0r ~/.vim/template/Dockerfile
       autocmd BufNewFile *.html     0r ~/.vim/template/html
+      autocmd BufNewFile .tern-project 0r ~/.vim/template/tern-project
     augroup END
 
 " hybrid linenumbers
