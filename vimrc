@@ -76,9 +76,9 @@
     let g:syntastic_javascript_checkers = ["eslint"]
 
 " tweaks for browsing
-    let g:netrw_banner=1
-    let g:netrw_list_hide=netrw_gitignore#Hide()
-    let g:netrw_liststyle=3 " treeview
+    let g:netrw_banner = 1
+    let g:netrw_list_hide = netrw_gitignore#Hide()
+    let g:netrw_liststyle = 3 " treeview
 
 " automate stuff
     augroup reload_vimrc
