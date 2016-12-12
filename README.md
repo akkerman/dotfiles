@@ -3,7 +3,7 @@
 ## installation instructions
 `git clone ssh://git@octotron:2222/linux-config/vim.git ~/.vim/`
 
-`apt install fontconfig`
+`apt install fontconfig cmake`
 
 read and execute `install.sh`
 
