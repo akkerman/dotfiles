@@ -25,6 +25,8 @@
         Plugin 'gisphm/vim-gitignore'
         Plugin 'wikitopian/hardmode'
 
+        Plugin 'ctrlpvim/ctrlp.vim'
+        Plugin 'ludovicchabant/vim-ctrlp-autoignore'
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
 
@@ -75,9 +77,10 @@
     let g:syntastic_javascript_checkers = ["eslint"]
 
 " tweaks for browsing
-    let g:netrw_banner=1
-    let g:netrw_list_hide=netrw_gitignore#Hide()
-    let g:netrw_liststyle=3 " treeview
+    let g:netrw_banner = 1
+    let g:netrw_list_hide = netrw_gitignore#Hide()
+    let g:netrw_liststyle = 3 " treeview
+    let g:ctrlp_extensions = ['autoignore']
 
 " automate stuff
     augroup reload_vimrc
