@@ -13,6 +13,7 @@
         Plugin 'altercation/vim-colors-solarized'
 
         Plugin 'tpope/vim-fugitive' " for git commands and branch in statusbar
+        Plugin 'tpope/vim-commentary'
         Plugin 'edkolev/tmuxline.vim' " for tmux status line
 
         Plugin 'tmux-plugins/vim-tmux' " syntax + more (shif+K for help e.g.)
