@@ -53,6 +53,11 @@
     set shiftwidth=4 " indent 4 spaces with '>'
     set expandtab    " insert 4 spaces when pressing tab
 
+" various
+    set history=200  " open with q:
+    set nowrap       " do NOT wrap long lines
+    set hidden       " when buffer modified and not in a window
+
 " new files
     augroup newfile
       autocmd!
@@ -68,6 +73,7 @@
 " finding files # https://www.youtube.com/watch?v=XA2WjJbmmoM
     set path+=**
     set wildmenu
+    set wildmode=full
 
 " syntax checking
     let g:airline#extensions#syntastic#enabled = 1
@@ -88,3 +94,5 @@
         autocmd!
         autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
     augroup END
+
+
