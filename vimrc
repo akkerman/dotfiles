@@ -103,7 +103,8 @@
     let g:UltiSnipsExpandTrigger="<c-j>"
 
 " automate stuff
-    augroup reload_vimrc
+    augroup my_stuff
         autocmd!
         autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
+        autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript-jasmine syntax=jasmine
     augroup END
