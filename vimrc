@@ -12,13 +12,13 @@
         Plugin 'vim-airline/vim-airline-themes'
         Plugin 'altercation/vim-colors-solarized'
 
-        Plugin 'tpope/vim-fugitive' " for git commands and branch in statusbar
+        Plugin 'tpope/vim-fugitive'     " for git commands and branch in statusbar
         Plugin 'tpope/vim-commentary'
-        Plugin 'edkolev/tmuxline.vim' " for tmux status line
+        Plugin 'edkolev/tmuxline.vim'   " for tmux status line
 
-        Plugin 'tmux-plugins/vim-tmux' " syntax + more (shif+K for help e.g.)
+        Plugin 'tmux-plugins/vim-tmux'  " syntax + more (shift+K for help e.g.)
 
-        Plugin 'ternjs/tern_for_vim' " code-analysis engine for JavaScript
+        Plugin 'ternjs/tern_for_vim'    " code-analysis engine for JavaScript
         Plugin 'Valloric/YouCompleteMe' " code-completion engine for Vim
 
         Plugin 'vim-syntastic/syntastic'
@@ -45,24 +45,25 @@
     highlight Normal ctermbg=none " no background, (transparant)
 
 " statusline (vim-airline)
-    set laststatus=2 " always on
+    set laststatus=2   " always on
     let g:airline#extensions#tabline#enabled = 1
 
 " tabs
-    set tabstop=4    " show existing tabs as 4 spaces
-    set shiftwidth=4 " indent 4 spaces with '>'
-    set expandtab    " insert 4 spaces when pressing tab
+    set tabstop=4      " show existing tabs as 4 spaces
+    set shiftwidth=4   " indent 4 spaces with '>'
+    set expandtab      " insert 4 spaces when pressing tab
 
 " various
-    set history=200  " open with q:
-    set nowrap       " do NOT wrap long lines
-    set hidden       " when buffer modified and not in a window
+    set history=200    " open with q:
+    set nowrap         " do NOT wrap long lines
+    set hidden         " when buffer modified and not in a window
+    set autowrite      " just write file to disk in a lot of cases
 
 " new files
     augroup newfile
       autocmd!
-      autocmd BufNewFile Dockerfile 0r ~/.vim/template/Dockerfile
-      autocmd BufNewFile *.html     0r ~/.vim/template/html
+      autocmd BufNewFile Dockerfile    0r ~/.vim/template/Dockerfile
+      autocmd BufNewFile *.html        0r ~/.vim/template/html
       autocmd BufNewFile .tern-project 0r ~/.vim/template/tern-project
     augroup END
 
@@ -87,7 +88,7 @@
     let g:netrw_banner = 1
     let g:netrw_list_hide = netrw_gitignore#Hide()
     let g:netrw_liststyle = 3 " treeview
-    let g:ctrlp_extensions = ['autoignore']
+    let g:ctrlp_extensions = ['autoignore'] " .ctrlpignore
 
 " automate stuff
     augroup reload_vimrc
