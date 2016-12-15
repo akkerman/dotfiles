@@ -14,7 +14,7 @@
 
         Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
         Plugin 'tpope/vim-commentary'    " gc adds comments
-        Plugin 'tpope/vim-surrond'       " ys,cs,ds - add,change,del surround
+        Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 
         Plugin 'edkolev/tmuxline.vim'    " for tmux status line
         Plugin 'tmux-plugins/vim-tmux'   " syntax + more (shift+K for help e.g.)
