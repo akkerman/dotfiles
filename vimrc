@@ -29,6 +29,8 @@
 
         Plugin 'ctrlpvim/ctrlp.vim'
         Plugin 'ludovicchabant/vim-ctrlp-autoignore'
+
+        Plugin 'SirVer/ultisnips'
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
 
@@ -94,11 +96,11 @@
     let g:netrw_list_hide = netrw_gitignore#Hide()
     let g:netrw_liststyle = 3 " treeview
     let g:ctrlp_extensions = ['autoignore'] " .ctrlpignore
+" snippets
+    let g:UltiSnipsExpandTrigger="<c-j>"    
 
 " automate stuff
     augroup reload_vimrc
         autocmd!
         autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
     augroup END
-
-
