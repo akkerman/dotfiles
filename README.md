@@ -10,7 +10,7 @@ read and execute `install.sh`
 ## .vimrc
 A custom .vimrc is normally stored at `~/.vimrc`, but VIM (from 7.4) also
 understands when put here so I can keep it under version control in the
-same repo. 
+same repo.
 
 _caveat:_ if a `~/.vimrc` is also used vim uses that one. see
 `:help vimrc`
@@ -18,8 +18,8 @@ _caveat:_ if a `~/.vimrc` is also used vim uses that one. see
 
 
 ## tmuxline.vim
-When running vim inside tmux, this plugin will change the status of tmux.  
-It was configured using `Tmuxline airline`  
+When running vim inside tmux, this plugin will change the status of tmux.
+It was configured using `Tmuxline airline`
 a snapshot was created which should be sourced in .tmux.conf:
 `source ~/.vim/tmuxline.conf`
 
