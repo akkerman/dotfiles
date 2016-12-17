@@ -64,12 +64,8 @@
     set nowrap         " do NOT wrap long lines
     set hidden         " when buffer modified and not in a window
     set autowrite      " just write file to disk in a lot of cases
-
-" various
-    set history=200  " open with q:
-    set nowrap       " do NOT wrap long lines
-    set hlsearch     " highlight matching searches
-    set incsearch    " show first match while typing search
+    set hlsearch       " highlight matching searches
+    set incsearch      " show first match while typing search
 
 " new files
     augroup newfile
