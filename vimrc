@@ -86,6 +86,12 @@
     set wildmenu
     set wildmode=full
 
+"  windows
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
+
 " syntax checking
     let g:airline#extensions#syntastic#enabled = 1
     let g:syntastic_always_populate_loc_list = 1
@@ -99,6 +105,7 @@
     let g:netrw_list_hide = netrw_gitignore#Hide()
     let g:netrw_liststyle = 3 " treeview
     let g:ctrlp_extensions = ['autoignore'] " .ctrlpignore
+
 " snippets
     let g:UltiSnipsExpandTrigger="<c-j>"
 
