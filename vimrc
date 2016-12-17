@@ -69,6 +69,7 @@
     set history=200  " open with q:
     set nowrap       " do NOT wrap long lines
     set hlsearch     " highlight matching searches
+    set incsearch    " show first match while typing search
 
 " new files
     augroup newfile
