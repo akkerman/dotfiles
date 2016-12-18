@@ -33,6 +33,7 @@
         Plugin 'SirVer/ultisnips'
         Plugin 'honza/vim-snippets'
 
+        Plugin 'digitaltoad/vim-pug'
         Plugin 'akkerman/vim-jasmine'
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
