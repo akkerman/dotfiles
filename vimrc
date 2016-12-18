@@ -35,6 +35,7 @@
 
         Plugin 'digitaltoad/vim-pug'
         Plugin 'akkerman/vim-jasmine'
+        Plugin 'akkerman/vim-jasmine-fold'
         " All of your Plugins must be added before the following line
     call vundle#end()             " required for vundle
 
