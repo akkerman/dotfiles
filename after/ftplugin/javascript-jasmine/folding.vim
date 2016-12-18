@@ -27,3 +27,4 @@ endfunction
 setlocal foldmethod=expr
 setlocal foldexpr=JasmineFolds()
 setlocal foldtext=JasmineFoldText()
+setlocal foldcolumn=4
