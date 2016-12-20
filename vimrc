@@ -11,6 +11,7 @@
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
         Plugin 'altercation/vim-colors-solarized'
+        Plugin 'gcmt/taboo.vim'          " rename tabs etc
 
         Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
         Plugin 'tpope/vim-commentary'    " gc adds comments
@@ -43,6 +44,7 @@
 
 " airline symbols
     let g:airline_powerline_fonts = 1
+    let g:airline#extensions#taboo#enabled = 1
 
 " colors
     syntax enable
