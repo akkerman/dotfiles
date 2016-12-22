@@ -117,3 +117,17 @@
         autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
         autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript-jasmine syntax=jasmine
     augroup END
+
+" normal mode mappings for jasmine
+    nnoremap <leader>jx mm[{Ix`m
+    nnoremap <leader>jjx mm2[{Ix`m
+    nnoremap <leader>jf mm[{If`m
+    nnoremap <leader>jjf mm2[{If`m
+    nnoremap <leader>je mm[{^x`m
+    nnoremap <leader>jje mm2[{^x`m
+
+" move blocks in visualmode
+    vnoremap K xkP`[V`]
+    vnoremap U xp`[V`]
+    vnoremap L >gv
+    vnoremap H <gv
