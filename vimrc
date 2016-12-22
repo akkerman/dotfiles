@@ -114,7 +114,10 @@
 " automate stuff
     augroup my_stuff
         autocmd!
+        " edit vimrc
         autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
+        nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+
         autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript-jasmine syntax=jasmine
     augroup END
 
@@ -131,3 +134,10 @@
     vnoremap U xp`[V`]
     vnoremap L >gv
     vnoremap H <gv
+
+" abbreviations
+    iabbrev widht width
+    iabbrev lenght length
+    iabbrev heigth height
+
+
