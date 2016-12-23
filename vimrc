@@ -144,4 +144,4 @@
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 inoremap jk <esc>
-inoremap <esc> :echoerr 'esc disabled, use jk'
+" inoremap <esc> :echoerr 'esc disabled, use jk'
