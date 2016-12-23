@@ -28,9 +28,6 @@ Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 
 Plugin 'vim-syntastic/syntastic' " syntax checking
 
-Plugin 'gisphm/vim-gitignore'
-Plugin 'wikitopian/hardmode'
-
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
