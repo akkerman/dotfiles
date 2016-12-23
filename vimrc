@@ -28,9 +28,6 @@
         Plugin 'gisphm/vim-gitignore'
         Plugin 'wikitopian/hardmode'
 
-        Plugin 'ctrlpvim/ctrlp.vim'
-        Plugin 'ludovicchabant/vim-ctrlp-autoignore'
-
         Plugin 'SirVer/ultisnips'
         Plugin 'honza/vim-snippets'
 
