@@ -31,6 +31,8 @@ Plugin 'vim-syntastic/syntastic' " syntax checking
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+Plugin 'christoomey/vim-tmux-navigator'
+
 Plugin 'digitaltoad/vim-pug'
 Plugin 'akkerman/vim-jasmine'
 Plugin 'akkerman/vim-jasmine-fold'
@@ -111,7 +113,7 @@ augroup my_stuff
     " edit vimrc
     autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
     nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-    " Jamsmine related 
+    " Jasmine related
     autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript-jasmine syntax=jasmine
 augroup END
 
