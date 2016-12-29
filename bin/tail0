@@ -1,0 +1,1 @@
+clear ; tail -f -n0 $@

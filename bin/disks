@@ -1,0 +1,1 @@
+sudo hdparm -I `sudo fdisk -l  | grep Disk\ / | awk  '{print $2}' | sed -e 's/.$//' ` | grep --color=none 'Model\|/dev'
