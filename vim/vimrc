@@ -1,0 +1,155 @@
+"
+" vim: set fdm=marker fcs=fold\:\ :
+"
+" vundle {{{
+set nocompatible              " be iMproved, required for vundle
+filetype off                  " required for vundle
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin() " {{{2
+" let Vundle manage Vundle, required for vundle
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'gcmt/taboo.vim'          " rename tabs etc
+
+Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
+Plugin 'tpope/vim-commentary'    " gc adds comments
+Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
+
+Plugin 'edkolev/tmuxline.vim'    " for tmux status line
+Plugin 'tmux-plugins/vim-tmux'   " syntax + more (shift+K for help e.g.)
+
+Plugin 'ternjs/tern_for_vim'     " code-analysis engine for JavaScript
+Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
+
+Plugin 'vim-syntastic/syntastic' " syntax checking
+
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'digitaltoad/vim-pug'
+Plugin 'akkerman/vim-jasmine'
+Plugin 'akkerman/vim-jasmine-fold'
+" All of your Plugins must be added before the following line
+call vundle#end()             " required for vundle }}}2
+
+filetype plugin indent on     " required for vundle
+
+" }}}
+" various {{{
+
+set history=200    " open with q:
+set nowrap         " do NOT wrap long lines
+set hidden         " when buffer modified and not in a window
+set autowrite      " just write file to disk in a lot of cases
+set hlsearch       " highlight matching searches
+set incsearch      " show first match while typing search
+" tabs
+set tabstop=4      " show existing tabs as 4 spaces
+set shiftwidth=4   " indent 4 spaces with '>'
+set expandtab      " insert 4 spaces when pressing tab
+" hybrid linenumbers
+set relativenumber
+set number
+" tweaks for browsing
+let g:netrw_banner = 1
+let g:netrw_list_hide = netrw_gitignore#Hide()
+let g:netrw_liststyle = 3 " treeview
+" finding files # https://www.youtube.com/watch?v=XA2WjJbmmoM
+set path+=**
+set wildmenu
+set wildmode=full
+
+" }}}
+" look and feel {{{
+
+" colors
+    syntax enable
+    set background=dark
+    set t_Co=16 " set colors of terminal
+    "let g:solarized_termcolors=256
+    silent! colorscheme solarized
+    highlight Normal ctermbg=none " no background, (transparant)
+
+" airline symbols
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#taboo#enabled = 1
+" statusline (vim-airline)
+    set laststatus=2   " always on
+    let g:airline#extensions#tabline#enabled = 1
+
+"}}}
+" plugin related settings {{{
+
+" syntax checking
+    let g:airline#extensions#syntastic#enabled = 1
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_javascript_checkers = ["eslint"]
+
+" snippets
+    let g:UltiSnipsExpandTrigger="<c-j>"
+
+"}}}
+" automate stuff {{{
+
+augroup newfile
+    autocmd!
+    autocmd BufNewFile Dockerfile    0r ~/.vim/template/Dockerfile
+    autocmd BufNewFile *.html        0r ~/.vim/template/html
+    autocmd BufNewFile .tern-project 0r ~/.vim/template/tern-project
+augroup END
+
+augroup my_stuff
+    autocmd!
+    " edit vimrc
+    autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
+    nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+    " Jasmine related
+    autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript-jasmine syntax=jasmine
+augroup END
+
+"}}}
+" mappings {{{
+
+" windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+" normal mode mappings for jasmine
+nnoremap <leader>jx mm[{Ix`m
+nnoremap <leader>jjx mm2[{Ix`m
+nnoremap <leader>jf mm[{If`m
+nnoremap <leader>jjf mm2[{If`m
+nnoremap <leader>je mm[{^x`m
+nnoremap <leader>jje mm2[{^x`m
+
+" move blocks in visualmode
+vnoremap K xkP`[V`]
+vnoremap U xp`[V`]
+vnoremap L >gv
+vnoremap H <gv
+
+" abbreviations {{{
+iabbrev widht width
+iabbrev lenght length
+iabbrev heigth height
+
+" }}}
+" http://learnvimscriptthehardway.stevelosh.com/ {{{
+
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+inoremap jk <esc>
+" inoremap <esc> :echoerr 'esc disabled, use jk'
+
+"}}}

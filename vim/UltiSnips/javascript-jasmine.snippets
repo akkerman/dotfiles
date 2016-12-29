@@ -1,0 +1,83 @@
+snippet setup "sharedSetup" b
+function sharedSetup() {
+	beforeEach(function () {
+		$1
+	});
+	afterEach(function () {
+		$2
+	});
+}
+$0
+endsnippet
+
+snippet jdmodel "test skeleton for Backbone.Model" b
+describe('model - ${1:ModelName}' function() {
+    "use strict";
+
+    var attributes, model;
+
+    afterEach(function() {
+        attributes = null;
+        model = null;        
+    });
+
+    it('should be defined', function () {
+        expect(${2:ModelType}).toBeDefined();
+    });
+
+    it('can be instantiated', function () {
+        model = new ($2);
+        expect(model).not.toBeNull();
+        expect(model).toBeDefined();
+    });    
+	$0
+});
+endsnippet
+
+snippet jdview "test skeleton for Backbone.View" b
+describe("view - ${1:ViewName}", function () {
+    "use strict";
+
+    var attributes, model, view;
+
+    afterEach(function () {
+        attributes = null;
+        model = null;
+        view = null;
+    });
+
+    it("should be defined", function () {
+        expect(${2:ViewType}).toBeDefined();
+    });
+
+    it("can be instantiated", function () {
+        view = new $2();
+        expect(view).not.toBeNull();
+        expect(view).toBeDefined();
+    });
+
+    it("should create a ${3:DIV} element", function () {
+        view = new $2();
+        expect(view.el.nodeName).toEqual("$3");
+    });
+
+    function sharedBeforeEach() {
+        beforeEach(function () {
+            attributes = {};
+            model = new Backbone.Model(attributes);
+            view = new $2({
+                model: model
+            });
+        });
+    }
+
+    describe("rendering", function () {
+        sharedBeforeEach();
+        it("returns the view object", function () {
+            expect(view.render()).toEqual(view);
+        });
+
+    });
+	$0
+});
+endsnippet
