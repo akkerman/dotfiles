@@ -1,0 +1,20 @@
+# ~/.tmuxinator/pocket.yml
+
+name: pocket
+root: ~/git/pocket_mongo
+
+pre: docker start pocket-mongo redis
+tmux_options: -f ~/.tmuxinator/tmux.override.conf
+
+windows:
+  - editor:
+      layout: 7d84,238x57,0,0{138x57,0,0,35,99x57,139,0[99x28,139,0,37,99x28,139,29,39]}
+      panes:
+        - vim .
+        - nodemon index.js
+        - npm --silent run lint
+  - mongo:
+      layout: even-vertical
+      panes:
+        - sh ~/git/pocket_mongo/bin/bash-shell.sh
+        - sh ~/git/pocket_mongo/bin/mongo-shell.sh
