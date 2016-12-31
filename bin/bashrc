@@ -1,4 +1,4 @@
-alias l=' ls -la' 
+alias l=' ls -lAF --group-directories-first' 
 
 
 export PATH=/home/akkerman/bin:$PATH
