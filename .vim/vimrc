@@ -27,6 +27,7 @@ Plugin 'ternjs/tern_for_vim'     " code-analysis engine for JavaScript
 Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'honza/dockerfile.vim'
 
 Plugin 'vim-syntastic/syntastic' " syntax checking
 
