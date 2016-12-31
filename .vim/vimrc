@@ -26,6 +26,8 @@ Plugin 'tmux-plugins/vim-tmux'   " syntax + more (shift+K for help e.g.)
 Plugin 'ternjs/tern_for_vim'     " code-analysis engine for JavaScript
 Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 
+Plugin 'kchmck/vim-coffee-script'
+
 Plugin 'vim-syntastic/syntastic' " syntax checking
 
 Plugin 'SirVer/ultisnips'
