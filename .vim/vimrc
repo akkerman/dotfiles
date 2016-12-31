@@ -120,6 +120,7 @@ augroup my_stuff
     autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript-jasmine syntax=jasmine
 augroup END
 
+
 "}}}
 " mappings {{{
 
@@ -128,13 +129,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-" normal mode mappings for jasmine
-nnoremap <leader>jx mm[{Ix`m
-nnoremap <leader>jjx mm2[{Ix`m
-nnoremap <leader>jf mm[{If`m
-nnoremap <leader>jjf mm2[{If`m
-nnoremap <leader>je mm[{^x`m
-nnoremap <leader>jje mm2[{^x`m
 
 " move blocks in visualmode
 vnoremap K xkP`[V`]
@@ -146,6 +140,41 @@ vnoremap H <gv
 iabbrev widht width
 iabbrev lenght length
 iabbrev heigth height
+
+" }}}
+
+" Jasmine spec {{{
+
+function! SpecAlternateFile(currentfile)
+    let file = expand(a:currentfile)
+    if match(file, ".spec.js$") >= 0
+        return substitute(file, '\v^(.+).spec.js$', '\1.js', '')
+    elseif match(file, '.js$') >= 0
+        return substitute(file, '\v^(.+).js$', '\1.spec.js', '')
+    else
+        return a:currentfile
+    endif
+
+endfunction
+
+function! SpecSwitch(currentfile)
+   let altfile = SpecAlternateFile(a:currentfile)
+   if bufexists(altfile)
+       execute 'buffer ' . fnameescape(altfile)
+   else
+       execute 'edit ' . fnameescape(altfile)
+   endif
+endfunction
+
+command! Spec :call SpecSwitch('%')
+
+" normal mode mappings for jasmine
+nnoremap <leader>jx mm[{Ix`m
+nnoremap <leader>jjx mm2[{Ix`m
+nnoremap <leader>jf mm[{If`m
+nnoremap <leader>jjf mm2[{If`m
+nnoremap <leader>je mm[{^x`m
+nnoremap <leader>jje mm2[{^x`m
 
 " }}}
 " http://learnvimscriptthehardway.stevelosh.com/ {{{
