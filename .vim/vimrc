@@ -73,19 +73,19 @@ set wildmode=full
 " look and feel {{{
 
 " colors
-    syntax enable
-    set background=dark
-    set t_Co=16 " set colors of terminal
-    "let g:solarized_termcolors=256
-    silent! colorscheme solarized
-    highlight Normal ctermbg=none " no background, (transparant)
+syntax enable
+set background=dark
+set t_Co=16 " set colors of terminal
+"let g:solarized_termcolors=256
+silent! colorscheme solarized
+highlight Normal ctermbg=none " no background, (transparant)
 
 " airline symbols
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#taboo#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#taboo#enabled = 1
 " statusline (vim-airline)
-    set laststatus=2   " always on
-    let g:airline#extensions#tabline#enabled = 1
+set laststatus=2   " always on
+let g:airline#extensions#tabline#enabled = 1
 
 "}}}
 " plugin related settings {{{
@@ -136,13 +136,13 @@ vnoremap U xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
 
+" }}}
 " abbreviations {{{
 iabbrev widht width
 iabbrev lenght length
 iabbrev heigth height
 
 " }}}
-
 " Jasmine spec {{{
 
 function! SpecAlternateFile(currentfile)
