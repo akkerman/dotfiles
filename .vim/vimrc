@@ -39,6 +39,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'akkerman/vim-jasmine'
 Plugin 'akkerman/vim-jasmine-fold'
+
+Plugin 'file:///home/akkerman/git/vim-potion.git'
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
 
@@ -123,12 +125,6 @@ augroup END
 
 "}}}
 " mappings {{{
-
-" windows
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 
 " move blocks in visualmode
 vnoremap K xkP`[V`]
