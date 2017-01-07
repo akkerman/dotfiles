@@ -40,7 +40,6 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'akkerman/vim-jasmine'
 Plugin 'akkerman/vim-jasmine-fold'
 
-Plugin 'file:///home/akkerman/git/vim-potion.git'
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
 
@@ -118,6 +117,7 @@ augroup my_stuff
     " edit vimrc
     autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
     nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+    nnoremap <leader>sv :source $MYVIMRC<CR>
     " Jasmine related
     autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript-jasmine syntax=jasmine
 augroup END
@@ -131,6 +131,7 @@ vnoremap K xkP`[V`]
 vnoremap U xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
+nnoremap <CR> o<ESC>
 
 " }}}
 " abbreviations {{{
