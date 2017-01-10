@@ -71,9 +71,11 @@ export PATH="/home/akkerman/bin:/opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
+#
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
