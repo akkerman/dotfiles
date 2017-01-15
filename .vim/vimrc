@@ -110,6 +110,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 augroup newfile
     autocmd!
     autocmd BufNewFile Dockerfile    0r ~/.vim/template/Dockerfile
+    autocmd BufNewFile Vagrantfile   0r ~/.vim/template/Vagrantfile
     autocmd BufNewFile *.html        0r ~/.vim/template/html
     autocmd BufNewFile .tern-project 0r ~/.vim/template/tern-project
 augroup END
