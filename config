@@ -182,3 +182,4 @@ exec --no-startup-id i3-msg 'exec spotify'
 exec --no-startup-id i3-msg 'exec gitkraken'
 exec --no-startup-id i3-msg 'exec calibre'
 
+# vim:ft=i3config:
