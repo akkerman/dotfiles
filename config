@@ -177,9 +177,9 @@ assign [class="GitKraken"] $workspace3
 assign [class="Calibre"] $workspace9
 
 # open on startup
-exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal;workspace $workspace2; exec google-chrome'
-exec --no-startup-id i3-msg 'exec spotify'
-exec --no-startup-id i3-msg 'exec gitkraken'
-exec --no-startup-id i3-msg 'exec calibre'
+# exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal;workspace $workspace2; exec google-chrome'
+# exec --no-startup-id i3-msg 'exec spotify'
+# exec --no-startup-id i3-msg 'exec gitkraken'
+# exec --no-startup-id i3-msg 'exec calibre'
 
 # vim:ft=i3config:
