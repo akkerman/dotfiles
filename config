@@ -9,6 +9,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+new_window pixel 1
+new_float normal
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -56,10 +60,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split h;exec notify-send -t 1500 'tile horizontally'
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split v;exec notify-send -t 1500 'tile vertically'
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -118,7 +122,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload;exec notify-send -t 1500 'i3 config reloaded'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -148,7 +152,7 @@ bindsym $mod+r mode "  "
 # finds out, if available)
 bar {
         # strip_workspace_numbers yes
-    	font pango: System San Francisco Display, FontAwesome 11
+        font pango: System San Francisco Display, FontAwesome 11
         status_command i3status
 }
 
@@ -176,5 +180,5 @@ assign [class="Calibre"] $workspace9
 exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal;workspace $workspace2; exec google-chrome'
 exec --no-startup-id i3-msg 'exec spotify'
 exec --no-startup-id i3-msg 'exec gitkraken'
-exec --no-startup-id i3-msg 'exec calibre' 
+exec --no-startup-id i3-msg 'exec calibre'
 
