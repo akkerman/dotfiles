@@ -170,7 +170,8 @@ bar {
 bindsym $mod+l exec i3lock -c 000000
 
 # Get Rid of Desktop Window While Launching Nautilus
-exec settings set org.gnome.desktop.background show-desktop-icons false
+exec gsettings set org.gnome.desktop.background show-desktop-icons false
+exec gsettings set org.nemo.desktop show-desktop-icons false
 
 # load network applet
 exec nm-applet
