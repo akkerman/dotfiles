@@ -41,6 +41,7 @@ Plugin 'akkerman/vim-jasmine'
 Plugin 'ssh://git@192.168.0.8:2222/akkerman/vim-javascript-jasmine.git'
 
 Plugin 'bigfish/vim-js-context-coloring'
+Plugin 'mboughaba/i3config.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
 
