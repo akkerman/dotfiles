@@ -78,7 +78,6 @@ set wildmode=full
 syntax enable
 set background=dark
 silent! colorscheme solarized
-highlight Normal ctermbg=none " no background, (transparant)
 
 " airline symbols
 let g:airline_powerline_fonts = 1
