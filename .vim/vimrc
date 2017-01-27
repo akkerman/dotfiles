@@ -3,6 +3,7 @@
 "
 " vundle {{{
 set nocompatible              " be iMproved, required for vundle
+set noesckeys
 filetype off                  " required for vundle
 
 " set the runtime path to include Vundle and initialize
