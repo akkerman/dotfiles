@@ -182,7 +182,7 @@ bar {
     }
     # strip_workspace_numbers yes
     font pango: System San Francisco Display, FontAwesome 11
-    status_command i3status
+    status_command i3status -c ~/.i3/i3status.conf
 }
 
 # lock screen
