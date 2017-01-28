@@ -170,20 +170,24 @@ bindsym $mod+r mode "  "
 
 # (plus the system information i3status finds out, if available)
 bar {
-    colors {
-        background #073642
-        statusline #657b83
-        separator #073642
-
-        active_workspace   #657b83 #657b83 #dedbb3
-        focused_workspace  #93a1a1 #93a1a1 #fdf6e3
-        inactive_workspace #002b36 #002b36 #dedbb3
-        urgent_workspace   #002b36 #002b36 #dc322f
-    }
-    # strip_workspace_numbers yes
+  # strip_workspace_numbers yes
     font pango: System San Francisco Display, FontAwesome 11
     status_command i3status -c ~/.i3/i3status.conf
+    colors {
+        separator #074632
+        background #002b36
+        statusline #268bd2
+        focused_workspace #fdf6e3 #859900 #fdf6e3
+        active_workspace #fdf6e3 #6c71c4 #fdf6e3
+        inactive_workspace #586e75 #93a1a1 #002b36
+        urgent_workspace #d33682 #d33682 #fdf6e3
+    }
 }
+
+client.focused #859900 #859900 #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
 # lock screen
 bindsym $mod+Mod1+l exec i3lock -c 000000
