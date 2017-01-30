@@ -67,6 +67,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+#background color
+exec --no-startup-id xsetroot -solid "#002b36"
+
 # i3 global {{{
 
 # reload the configuration file
