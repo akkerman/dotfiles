@@ -22,6 +22,8 @@ Plugin 'tpope/vim-commentary'    " gc adds comments
 Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 Plugin 'tpope/vim-markdown'
 
+Plugin 'w0rp/ale'                " syntax check
+
 Plugin 'edkolev/tmuxline.vim'    " for tmux status line
 Plugin 'tmux-plugins/vim-tmux'   " syntax + more (shift+K for help e.g.)
 
@@ -31,7 +33,6 @@ Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'honza/dockerfile.vim'
 
-Plugin 'vim-syntastic/syntastic' " syntax checking
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -85,6 +86,7 @@ silent! colorscheme solarized
 " airline symbols
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#taboo#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 " statusline (vim-airline)
 set laststatus=2   " always on
 let g:airline#extensions#tabline#enabled = 1
@@ -92,13 +94,9 @@ let g:airline#extensions#tabline#enabled = 1
 "}}}
 " plugin related settings {{{
 
-" syntax checking
-let g:airline#extensions#syntastic#enabled = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ["eslint"]
+let g:ale_linters = { 'javascript': ['eslint'] }
+nmap <silent> <F2> <Plug>(ale_next_wrap)
+nmap <silent> <F3> <Plug>(ale_previous_wrap)
 
 " context coloring (default off)
 let g:js_context_colors_enabled = 0
@@ -107,7 +105,7 @@ let g:js_context_colors_enabled = 0
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " vim-markdown
-let g:markdown_fenced_languages = ["javascript", "html"]
+let g:markdown_fenced_languages = ["javascript", "html", "abap"]
 
 "}}}
 " automate stuff {{{
@@ -186,7 +184,7 @@ nnoremap <leader>jje mm2[{^x`m
 
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-inoremap jk <esc>
+" inoremap jk <esc>
 " inoremap <esc> :echoerr 'esc disabled, use jk'
 
 "}}}
