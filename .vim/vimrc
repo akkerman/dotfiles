@@ -21,6 +21,7 @@ Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
 Plugin 'tpope/vim-commentary'    " gc adds comments
 Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-vinegar'       " directory browsing
 
 Plugin 'w0rp/ale'                " syntax check
 
@@ -30,18 +31,24 @@ Plugin 'tmux-plugins/vim-tmux'   " syntax + more (shift+K for help e.g.)
 Plugin 'ternjs/tern_for_vim'     " code-analysis engine for JavaScript
 Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 
+
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'honza/dockerfile.vim'
 
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-runner'
 
 Plugin 'digitaltoad/vim-pug'
 Plugin 'akkerman/vim-jasmine'
 Plugin 'ssh://git@192.168.0.8:2222/akkerman/vim-javascript-jasmine.git'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 Plugin 'bigfish/vim-js-context-coloring'
 Plugin 'mboughaba/i3config.vim'
@@ -128,6 +135,10 @@ augroup my_stuff
     autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
     nnoremap <leader>ev :vsplit $MYVIMRC<CR>
     nnoremap <leader>sv :source $MYVIMRC<CR>
+    
+    " send to tmux
+    vnoremap <leader>st :VtrSendLinesToRunner<CR>
+
     " Jasmine related
     autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript syntax=jasmine
 augroup END
