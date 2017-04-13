@@ -56,7 +56,7 @@ alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose bower grunt gulp )
+plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose bower grunt gulp)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,3 +111,7 @@ setopt histignorespace
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles=config
 alias dot=config
+
+TERM=xterm-256color
+
+bindkey -M vicmd v edit-command-line
