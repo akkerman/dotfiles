@@ -20,11 +20,17 @@
     start = flow feature start
     feature = flow feature
     finish = flow feature finish
+
     stat = status
     st = status
+
     unstage = reset HEAD --
     revert = reset HEAD --
     kraken = !gitkraken -p `pwd` >/dev/null 2>&1 &
     amend = commit --amend
+
+    co = commit
+    coa = commit -a 
+    coma = commit -am
 [color]
     ui = always
