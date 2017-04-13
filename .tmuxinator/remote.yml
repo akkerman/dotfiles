@@ -1,0 +1,8 @@
+# ~/.tmuxinator/remote.yml
+
+name: remote
+root: ~/
+windows:
+  - shell:
+      panes:
+        - # zsh
