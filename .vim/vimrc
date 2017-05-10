@@ -57,6 +57,8 @@ Plugin 'lukerandall/haskellmode-vim'
 
 Plugin 'chr4/nginx.vim'
 
+Plugin 'majutsushi/tagbar'
+
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
 
@@ -126,6 +128,9 @@ let g:markdown_fenced_languages = ["javascript", "html", "abap", "haskell"]
 " haskellmode-vim
 let g:haddock_browser="/usr/bin/google-chrome"
 au BufEnter *.hs compiler ghc
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 "}}}
 " automate stuff {{{
