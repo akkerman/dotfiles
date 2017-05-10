@@ -111,6 +111,7 @@ setopt histignorespace
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles=config
 alias dot=config
+alias vim.='vim .'
 
 TERM=xterm-256color
 
