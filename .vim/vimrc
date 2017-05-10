@@ -15,7 +15,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'gcmt/taboo.vim'          " rename tabs etc
 
 Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
 Plugin 'tpope/vim-commentary'    " gc adds comments
@@ -43,15 +42,21 @@ Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 
-Plugin 'digitaltoad/vim-pug'
 Plugin 'akkerman/vim-jasmine'
 Plugin 'ssh://git@192.168.0.8:2222/akkerman/vim-javascript-jasmine.git'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'moll/vim-node'
 
 Plugin 'bigfish/vim-js-context-coloring'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'godlygeek/tabular'
+
+Plugin 'lukerandall/haskellmode-vim'
+
+Plugin 'chr4/nginx.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
 
@@ -118,6 +123,10 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 " vim-markdown
 let g:markdown_fenced_languages = ["javascript", "html", "abap", "haskell"]
 
+" haskellmode-vim
+let g:haddock_browser="/usr/bin/google-chrome"
+au BufEnter *.hs compiler ghc
+
 "}}}
 " automate stuff {{{
 
@@ -135,7 +144,7 @@ augroup my_stuff
     autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
     nnoremap <leader>ev :vsplit $MYVIMRC<CR>
     nnoremap <leader>sv :source $MYVIMRC<CR>
-    
+
     " send to tmux
     vnoremap <leader>st :VtrSendLinesToRunner<CR>
 
@@ -153,6 +162,9 @@ vnoremap U xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
 " nnoremap <CR> o<ESC> " usesless in quickfix window...
+
+" switch buffer by number
+nnoremap <leader>l :ls<cr>:b<space>
 
 " }}}
 " abbreviations {{{
