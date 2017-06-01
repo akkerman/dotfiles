@@ -208,7 +208,12 @@ exec nm-applet
 # sound
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master 0% unmute
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # load sound applet
 exec /usr/bin/pasystray
