@@ -1,1 +1,2 @@
-sudo hdparm -I `sudo fdisk -l  | grep Disk\ / | awk  '{print $2}' | sed -e 's/.$//' ` | grep --color=none 'Model\|/dev'
+#sudo hdparm -I `sudo fdisk -l  | grep Disk\ / | awk  '{print $2}' | sed -e 's/.$//' ` | grep --color=none 'Model\|/dev' 
+sudo hddtemp `sudo fdisk -l  | grep Disk\ / | grep dev | awk  '{print $2}' | sed -e 's/.$//' `  
