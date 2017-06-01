@@ -31,7 +31,7 @@ Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 
 
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'honza/dockerfile.vim'
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
