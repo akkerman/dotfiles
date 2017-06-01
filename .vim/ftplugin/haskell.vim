@@ -29,3 +29,5 @@ let g:tagbar_type_haskell = {
         \ 'type'   : 't'
     \ }
 \ }
+
+au BufEnter *.hs compiler ghc
