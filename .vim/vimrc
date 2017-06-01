@@ -20,7 +20,6 @@ Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
 Plugin 'tpope/vim-commentary'    " gc adds comments
 Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-vinegar'       " directory browsing
 
 Plugin 'w0rp/ale'                " syntax check
 
@@ -35,6 +34,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'honza/dockerfile.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -58,6 +58,9 @@ Plugin 'lukerandall/haskellmode-vim'
 Plugin 'chr4/nginx.vim'
 
 Plugin 'majutsushi/tagbar'
+
+
+Plugin 'digitaltoad/vim-pug'
 
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
@@ -129,7 +132,8 @@ let g:markdown_fenced_languages = ["javascript", "html", "abap", "haskell"]
 let g:haddock_browser="/usr/bin/google-chrome"
 au BufEnter *.hs compiler ghc
 
-" tagbar
+" NERDTree Tagbar
+nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 "}}}
@@ -170,6 +174,8 @@ vnoremap H <gv
 
 " switch buffer by number
 nnoremap <leader>l :ls<cr>:b<space>
+" switch off highlightsearch
+nnoremap <leader>n :nohls<cr>
 
 " }}}
 " abbreviations {{{
