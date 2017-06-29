@@ -1,2 +1,2 @@
 FROM scratch
-MAINTAINER Marcel Akkerman <ikbenMarcelAkkerman@hotmail.com>
+LABEL maintainer "Marcel Akkerman <ikbenMarcelAkkerman@hotmail.com>"
