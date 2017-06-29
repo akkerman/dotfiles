@@ -4,10 +4,11 @@ name: config
 root: ~/
 
 windows:
-  - editor:
-      panes: 
-        - vim .vim/vimrc .zshrc .tmux.conf .gitconfig
   - vimconfig:
       root: ~/.vim/
       panes: 
-         - # zsh
+        - # zsh
+  - i3config:
+      root: ~/.i3
+      panes: 
+        - # zsh
