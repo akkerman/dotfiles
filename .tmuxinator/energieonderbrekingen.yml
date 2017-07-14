@@ -10,5 +10,5 @@ windows:
       layout: 0d18,176x49,0,0{105x49,0,0,0,70x49,106,0[70x24,106,0,1,70x24,106,25,2]}
       panes:
         - vim .
-        - vagrant ssh
+        - vagrant up && vagrant ssh
         - # zsh
