@@ -222,6 +222,7 @@ exec /usr/bin/pasystray
 # auto assign to workspace
 assign [class="jetbrains-idea"] $workspace4
 assign [class="GitKraken"] $workspace3
+assign [class="Gitg"] $workspace3
 assign [class="Calibre"] $workspace9
 
 # move workspace
