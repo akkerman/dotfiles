@@ -220,10 +220,13 @@ exec /usr/bin/pasystray
 # }}}
 
 # auto assign to workspace
-assign [class="jetbrains-idea"] $workspace4
 assign [class="GitKraken"] $workspace3
 assign [class="Gitg"] $workspace3
-assign [class="Calibre"] $workspace9
+assign [class="TelegramDesktop"] $workspace7
+assign [class="Slack"] $workspace7
+assign [class="calibre"] $workspace9
+for_window [class="Spotify"] move to workspace $workspace10
+assign [class="Google-chrome" title="VNC® Viewer for Google Chrome™"] $workspace8
 
 # move workspace
 bindsym $mod+m move workspace to output left
