@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
 Plugin 'tpope/vim-commentary'    " gc adds comments
 Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-dispatch'
 
 Plugin 'w0rp/ale'                " syntax check
 
@@ -45,7 +46,7 @@ Plugin 'christoomey/vim-tmux-runner'
 Plugin 'akkerman/vim-jasmine'
 Plugin 'ssh://git@192.168.0.8:2222/akkerman/vim-javascript-jasmine.git'
 
-Plugin 'pangloss/vim-javascript'
+" Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'moll/vim-node'
 
@@ -126,13 +127,14 @@ let g:js_context_colors_enabled = 0
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " vim-markdown
-let g:markdown_fenced_languages = ["javascript", "html", "abap", "haskell"]
+let g:markdown_fenced_languages = ["sh", "javascript", "html", "abap", "haskell"]
 
 " haskellmode-vim
 let g:haddock_browser="/usr/bin/google-chrome"
 au BufEnter *.hs compiler ghc
 
 " NERDTree Tagbar
+nmap <leader>f :NERDTreeFind<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
