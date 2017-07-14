@@ -5,15 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="miloshadzic"
-#ZSH_THEME="ys"
-#ZSH_THEME="wezm"
-#ZSH_THEME="random"
-#ZSH_THEME="murilasso"
 ZSH_THEME="agnoster"
 
-alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print \$4}")'
+alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print \$3}")'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -63,6 +57,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/home/akkerman/bin:/opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/bin:/home/akkerman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -99,6 +94,7 @@ alias mine='sudo chown -R akkerman.akkerman *'
 #source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.tmuxinator/autocomplete-tmuxinator.zsh
+
 
 DISABLE_AUTO_TITLE=true
 
