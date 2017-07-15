@@ -235,11 +235,8 @@ bindsym $mod+g exec google-chrome
 # open on startup
 exec --no-startup-id i3-msg 'workspace $workspace4; exec termite'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec google-chrome'
-exec synergy
-# exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal;workspace $workspace2; exec google-chrome'
-# exec --no-startup-id i3-msg 'exec spotify'
-# exec --no-startup-id i3-msg 'exec gitkraken'
-# exec --no-startup-id i3-msg 'exec calibre'
+exec --no-startup-id synergy
+exec --no-startup-id dropbox start
 
 # vim:ft=i3config fdm=marker fdc=4 fcs=fold\:\ :
 
