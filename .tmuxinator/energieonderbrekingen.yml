@@ -3,12 +3,34 @@
 name: Energie Onderbrekingen
 root: ~/git/creetion/ea-development-vm
 
+pre: vagrant up
 tmux_options: -f ~/.tmuxinator/tmux.override.conf
 
 windows:
-  - editor:
+  - vm:
+      layout: main-horizontal
+      panes: 
+        - vim:
+          - vim +NERDTree Vagrantfile
+        - ctop: 
+          - vagrant ssh
+          - ctop
+        - # clear
+
+  - project:
+      root: ~/git/creetion/ea-development-vm/energieonderbrekingen.nl
       layout: 0d18,176x49,0,0{105x49,0,0,0,70x49,106,0[70x24,106,0,1,70x24,106,25,2]}
       panes:
-        - vim .
-        - vagrant up && vagrant ssh
+        - vim: 
+          - tmux select-window -t "Energie Onderbrekingen":1
+          - vim +NERDTree
+        - vagrant:
+            - vagrant ssh
         - # zsh
+  - documentation:
+      root: ~/Documents/enexis-energy-alert
+      layout: 3c14,239x57,0,0[239x48,0,0,25,239x8,0,49,26]
+      panes:
+        - vim +NERDTree
+        - guard
+    
