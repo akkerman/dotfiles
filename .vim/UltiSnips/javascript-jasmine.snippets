@@ -1,36 +1,36 @@
 snippet setup "sharedSetup" b
 function sharedSetup() {
-	beforeEach(function () {
-		$1
-	});
-	afterEach(function () {
-		$2
-	});
+    beforeEach(function () {
+        $1
+    });
+    afterEach(function () {
+        $2
+    });
 }
 $0
 endsnippet
 
 snippet jdmodel "test skeleton for Backbone.Model" b
-describe('model - ${1:ModelName}' function() {
+describe("model - ${1:ModelName}", function () {
     "use strict";
 
     var attributes, model;
 
-    afterEach(function() {
+    afterEach(function () {
         attributes = null;
-        model = null;        
+        model = null;
     });
 
-    it('should be defined', function () {
+    it("should be defined", function () {
         expect(${2:ModelType}).toBeDefined();
     });
 
-    it('can be instantiated', function () {
+    it("can be instantiated", function () {
         model = new ($2);
         expect(model).not.toBeNull();
         expect(model).toBeDefined();
-    });    
-	$0
+    });
+    $0
 });
 endsnippet
 
@@ -78,6 +78,6 @@ describe("view - ${1:ViewName}", function () {
         });
 
     });
-	$0
+    $0
 });
 endsnippet
