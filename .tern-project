@@ -1,7 +1,9 @@
 {
     "libs": [
         "browser",
-        "underscore"
+        "jquery",
+        "underscore",
+        "Backbone"
     ],
     "plugins": {
         "node": {}
