@@ -62,6 +62,7 @@ Plugin 'chr4/nginx.vim'
 
 Plugin 'majutsushi/tagbar'
 
+Plugin 'mileszs/ack.vim'
 
 Plugin 'digitaltoad/vim-pug'
 
