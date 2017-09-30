@@ -62,9 +62,12 @@ Plugin 'chr4/nginx.vim'
 
 Plugin 'majutsushi/tagbar'
 
-Plugin 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim' " ack-grep
 
 Plugin 'digitaltoad/vim-pug'
+
+Plugin 'tmhedberg/SimpylFold' " Python folding
+Plugin 'jmcantrell/vim-virtualenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
@@ -98,6 +101,9 @@ let g:netrw_liststyle = 3 " treeview
 set path+=**
 set wildmenu
 set wildmode=full
+" visualize invisible characters
+set list
+set listchars=tab:>-
 
 " }}}
 " look and feel {{{
@@ -138,7 +144,7 @@ let g:js_context_colors_enabled = 0
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " vim-markdown
-let g:markdown_fenced_languages = ["sh", "javascript", "html", "abap", "haskell"]
+let g:markdown_fenced_languages = ["java","sh", "javascript", "html", "abap", "haskell"]
 
 " haskellmode-vim
 let g:haddock_browser="/usr/bin/google-chrome"
@@ -192,6 +198,8 @@ vnoremap H <gv
 nnoremap <leader>l :ls<cr>:b<space>
 " switch off highlightsearch
 nnoremap <leader>n :nohls<cr>
+" format json
+nnoremap <leader>j :%!jq '.'<cr>:set ft=json<cr>
 
 " }}}
 " abbreviations {{{
