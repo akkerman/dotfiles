@@ -167,6 +167,7 @@ augroup newfile
     autocmd BufNewFile Vagrantfile   0r ~/.vim/template/Vagrantfile
     autocmd BufNewFile *.html        0r ~/.vim/template/html
     autocmd BufNewFile .tern-project 0r ~/.vim/template/tern-project
+    autocmd BufNewFile docker-compose*.yml 0r ~/.vim/template/docker-compose.yml
 augroup END
 
 augroup my_stuff
