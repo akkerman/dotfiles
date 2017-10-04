@@ -57,7 +57,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/akkerman/.local/bin:/home/akkerman/bin:/opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/bin:/home/akkerman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/akkerman/.gem/ruby/2.3.0/bin::/home/akkerman/.local/bin:/home/akkerman/bin:/opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/bin:/home/akkerman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
