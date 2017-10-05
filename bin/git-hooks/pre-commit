@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if git-rev-parse --verify HEAD >/dev/null 2>&1; then
+    against=HEAD
+else
+    against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+exitcode="0"
+
+for FILE in `git diff-index --name-status $against -- | cut -c3-` ; do
+    # Check if the file contains 'debugger'
+    if grep -q 'debugger' $FILE
+    then
+        grep -Hn --color 'debugger' $FILE
+        exitcode="1"
+    fi
+
+    if grep -q '.set_trace' $FILE
+    then
+        grep -Hn --color 'set_trace' $FILE
+        exitcode="1"
+    fi
+done
+
+if [ $exitcode = "1" ]
+then
+    echo "\nDebugger statements found.\nCommit aborted"
+fi
+exit $exitcode
