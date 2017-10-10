@@ -103,7 +103,7 @@ set wildmenu
 set wildmode=full
 " visualize invisible characters
 set list
-set listchars=tab:>-
+set listchars=tab:»·,trail:·
 " visualize max length 
 let &colorcolumn="80,".join(range(100,999),",")
 
