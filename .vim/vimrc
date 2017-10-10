@@ -156,6 +156,8 @@ let g:haddock_browser="/usr/bin/google-chrome"
 au BufEnter *.hs compiler ghc
 
 " NERDTree Tagbar
+
+let NERDTreeIgnore=['__pycache__', 'env$[[dir]]']
 nmap <leader>f :NERDTreeFind<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
