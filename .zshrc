@@ -108,9 +108,10 @@ alias dotfiles=config
 alias dot=config
 alias vim.='vim .'
 
-TERM=xterm-256color
+# TERM=xterm-256color
 
 bindkey -M vicmd v edit-command-line
 
 export NVM_DIR="/home/akkerman/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+

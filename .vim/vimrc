@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'cocopon/iceberg.vim'
 
 Plugin 'tpope/vim-repeat'
@@ -91,7 +91,6 @@ set expandtab      " insert 4 spaces when pressing tab
 set relativenumber
 set number
 " splits
-set splitbelow
 set splitright
 " tweaks for browsing
 let g:netrw_banner = 1
@@ -104,7 +103,7 @@ set wildmode=full
 " visualize invisible characters
 set list
 set listchars=tab:»·,trail:·
-" visualize max length 
+" visualize max length
 let &colorcolumn="80,".join(range(100,999),",")
 
 " }}}
@@ -113,7 +112,6 @@ let &colorcolumn="80,".join(range(100,999),",")
 " colors
 syntax enable
 set background=dark
-silent! colorscheme solarized
 
 " airline symbols
 let g:airline_powerline_fonts = 1
@@ -146,7 +144,13 @@ let g:ale_set_quickfix = 1
 let g:js_context_colors_enabled = 0
 
 " snippets
-let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+
+" youcompleteme
+let g:ycm_key_list_select_completion = ['<C-j>']
+let g:ycm_key_list_previous_completion = ['<C-k>']
+
 
 " vim-markdown
 let g:markdown_fenced_languages = ["java","sh", "javascript", "html", "abap", "haskell"]
@@ -164,6 +168,8 @@ nmap <F8> :TagbarToggle<CR>
 
 " Tern
 let g:tern_map_keys=1
+
+
 
 "}}}
 " automate stuff {{{
@@ -275,3 +281,5 @@ endfunction
 
 
 vnoremap <C-c> "+y
+
+colors iceberg
