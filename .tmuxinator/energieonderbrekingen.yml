@@ -9,19 +9,20 @@ tmux_options: -f ~/.tmuxinator/tmux.override.conf
 windows:
   - vm:
       layout: main-horizontal
-      panes: 
+      panes:
         - vim:
           - vim +NERDTree Vagrantfile
-        - ctop: 
+        - ctop:
           - vagrant ssh
           - ctop
         - # clear
 
   - project:
+      pre: export PYTHONPATH=~/git/creetion/ea-development-vm/energieonderbrekingen.nl/shared
       root: ~/git/creetion/ea-development-vm/energieonderbrekingen.nl
       layout: 0d18,176x49,0,0{105x49,0,0,0,70x49,106,0[70x24,106,0,1,70x24,106,25,2]}
       panes:
-        - vim: 
+        - vim:
           - tmux select-window -t "Energie Onderbrekingen":1
           - vim +NERDTree
         - vagrant:
