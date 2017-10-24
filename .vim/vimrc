@@ -146,11 +146,14 @@ let g:js_context_colors_enabled = 0
 " snippets
 " let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 " youcompleteme
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
-
+let g:ycm_key_list_accept_completion = ['<C-y>']
 
 " vim-markdown
 let g:markdown_fenced_languages = ["java","sh", "javascript", "html", "abap", "haskell"]
@@ -282,4 +285,5 @@ endfunction
 
 vnoremap <C-c> "+y
 
+set t_Co=256
 colors iceberg
