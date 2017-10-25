@@ -171,7 +171,7 @@ bindsym $mod+r mode "  "
 
 # }}}2
 # }}}
-# Start i3bar to display a workspace bar {{{
+# Start i3bar to display a workspace bar {9{
 
 # (plus the system information i3status finds out, if available)
 bar {
@@ -179,9 +179,9 @@ bar {
     font pango: System San Francisco Display, FontAwesome 11
     status_command i3status -c ~/.i3/i3status.conf
      colors {
-    #     separator #074632
-         background #1c1c1c
-    #     statusline #268bd2
+        separator  #3d425b
+        background #1c1c1c
+        statusline #888888
     #     focused_workspace #fdf6e3 #859900 #fdf6e3
     #     active_workspace #fdf6e3 #6c71c4 #fdf6e3
     #     inactive_workspace #586e75 #93a1a1 #002b36
