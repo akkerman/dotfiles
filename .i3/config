@@ -177,7 +177,7 @@ bindsym $mod+r mode "  "
 bar {
   # strip_workspace_numbers yes
     font pango: System San Francisco Display, FontAwesome 11
-    status_command i3status -c ~/.i3/i3status.conf
+    status_command py3status -c ~/.i3/i3status.conf
      colors {
         separator  #3d425b
         background #1c1c1c
