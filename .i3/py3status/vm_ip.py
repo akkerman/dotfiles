@@ -65,6 +65,9 @@ class Py3status:
     text = '-'
     vm_name = ''
 
+    status = 'IP'
+    online = False
+
     def _get_ipaddr(self):
         pipeline = ip_addr(extract(filter(lambda x: self.vm_name in x, vms())))
         for (vm_name, addr) in pipeline:
@@ -76,15 +79,19 @@ class Py3status:
         :returns: TODO
         """
         ipaddr = self._get_ipaddr()
+        self.online = is_online(self.vm_name)
 
         if ipaddr is None or 'No value' in ipaddr:
             color = self.py3.COLOR_BAD
             if ipaddr is None:
                 ipaddr = 'vm not found'
         else:
-            color = self.py3.COLOR_ONLINE if is_online(self.vm_name) else self.py3.COLOR_OFFLINE
+            color = self.py3.COLOR_ONLINE if self.online else self.py3.COLOR_OFFLINE
 
-        full_text = '{}: {}'.format(self.text, ipaddr)
+        if self.status == 'IP':
+            full_text = '{}: {}'.format(self.text, ipaddr)
+        if self.status == 'NAME':
+            full_text = self.vm_name
 
 
         return {
@@ -92,6 +99,12 @@ class Py3status:
             'color': color,
             'cached_until': self.py3.time_in(10)
             }
+
+    def on_click(self, event):
+        if self.status == 'IP':
+            self.status = 'NAME'
+        else:
+            self.status = 'IP'
 
 
 if __name__ == "__main__":
