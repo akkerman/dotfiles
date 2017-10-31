@@ -55,9 +55,9 @@ def is_online(vm_name):
         line = line.decode('utf-8')
         if line == '':
             break
-        if line == 'VMState="running"':
+        if 'VMState' in line and 'running' in line:
             return True
-    
+
     return False
 
 
@@ -67,7 +67,8 @@ class Py3status:
 
     def _get_ipaddr(self):
         pipeline = ip_addr(extract(filter(lambda x: self.vm_name in x, vms())))
-        for (_, addr) in pipeline:
+        for (vm_name, addr) in pipeline:
+            self.vm_name = vm_name
             return addr
 
     def vm_ip(self):
@@ -89,5 +90,13 @@ class Py3status:
         return {
             'full_text': full_text,
             'color': color,
-            'cached_until': self.py3.CACHE_FOREVER
+            'cached_until': self.py3.time_in(10)
             }
+
+
+if __name__ == "__main__":
+    pipeline = ip_addr(extract(filter(lambda x: 'ea-dev' in x, vms())))
+    for entry in pipeline:
+        (n,a) = entry
+        print(entry)
+        print(is_online(n))
