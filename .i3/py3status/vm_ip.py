@@ -30,8 +30,8 @@ def extract(vm_lines):
 
 def ip_addr(vm_tuples):
     """ get ip address of vm_tuples
-    :vm_tuples: TODO
-    :returns: TODO
+    :vm_tuples: [(name, id)]
+    :returns: generator
     """
     for (vm_name, _) in vm_tuples:
         command = ['VBoxManage', 'guestproperty', 'get',
@@ -44,6 +44,21 @@ def ip_addr(vm_tuples):
             ip_value = ip_value.split(' ')[1]
 
         yield (vm_name, ip_value)
+
+
+def is_online(vm_name):
+    command = ['VBoxManage', 'showvminfo',
+               vm_name, '--machinereadable']
+    proc = Popen(command, stdout=PIPE)
+    while True:
+        line = proc.stdout.readline()
+        line = line.decode('utf-8')
+        if line == '':
+            break
+        if line == 'VMState="running"':
+            return True
+    
+    return False
 
 
 class Py3status:
@@ -66,9 +81,10 @@ class Py3status:
             if ipaddr is None:
                 ipaddr = 'vm not found'
         else:
-            color = self.py3.COLOR_GOOD
+            color = self.py3.COLOR_ONLINE if is_online(self.vm_name) else self.py3.COLOR_OFFLINE
 
         full_text = '{}: {}'.format(self.text, ipaddr)
+
 
         return {
             'full_text': full_text,
