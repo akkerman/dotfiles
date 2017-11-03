@@ -68,6 +68,7 @@ Plugin 'digitaltoad/vim-pug'
 
 Plugin 'tmhedberg/SimpylFold' " Python folding
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'vim-python/python-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
@@ -163,7 +164,6 @@ let g:haddock_browser="/usr/bin/google-chrome"
 au BufEnter *.hs compiler ghc
 
 " NERDTree Tagbar
-
 let NERDTreeIgnore=['__pycache__', 'env$[[dir]]']
 nmap <leader>f :NERDTreeFind<CR>
 nmap <F7> :NERDTreeToggle<CR>
@@ -172,6 +172,9 @@ nmap <F8> :TagbarToggle<CR>
 " Tern
 let g:tern_map_keys=1
 
+" python-syntax
+let g:python_highlight_string_format=1
+let g:python_highlight_string_formatting=1
 
 
 "}}}
