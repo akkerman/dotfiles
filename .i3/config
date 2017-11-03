@@ -10,8 +10,9 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel
 new_float normal
+hide_edge_borders both
 
 set $mod Mod4
 
@@ -54,7 +55,7 @@ bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -171,7 +172,7 @@ bindsym $mod+r mode "  "
 
 # }}}2
 # }}}
-# Start i3bar to display a workspace bar {9{
+# Start i3bar to display a workspace bar {{{
 
 # (plus the system information i3status finds out, if available)
 bar {
@@ -245,4 +246,3 @@ exec --no-startup-id synergy
 exec --no-startup-id dropbox start
 
 # vim:ft=i3config fdm=marker fdc=4 fcs=fold\:\ :
-
