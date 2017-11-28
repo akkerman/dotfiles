@@ -52,7 +52,7 @@ alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose bower grunt z npm yarn aws httpie pip tmux tmuxinator)
-plugins=(git git-flow vagrant ssh-agent docker docker-compose z pip tmux tmuxinator kubectl)
+plugins=(git git-flow vagrant ssh-agent docker docker-compose z pip tmux tmuxinator kubectl kompose)
 
 source $ZSH/oh-my-zsh.sh
 
