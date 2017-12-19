@@ -52,7 +52,7 @@ alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose bower grunt z npm yarn aws httpie pip tmux tmuxinator)
-plugins=(git git-flow vagrant ssh-agent docker docker-compose z pip tmux tmuxinator kubectl kompose)
+plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose z pip tmux tmuxinator kubectl kompose aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +106,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles=config
 alias dot=config
 alias vim.='vim .'
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
 
 # TERM=xterm-256color
 
@@ -114,3 +115,4 @@ bindkey -M vicmd v edit-command-line
 export NVM_DIR="/home/akkerman/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+alias tpwd='tmux new -s "$(basename $PWD)"'
