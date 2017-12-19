@@ -24,6 +24,9 @@ Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-dispatch'
 
+Plugin 'vim-scripts/argtextobj.vim'  " provides a text object for function arguments
+Plugin 'michaeljsmith/vim-indent-object' " provides a text object based on indentation level
+
 Plugin 'w0rp/ale'                " syntax check
 
 Plugin 'edkolev/tmuxline.vim'    " for tmux status line
@@ -157,7 +160,7 @@ let g:ycm_key_list_previous_completion = ['<C-k>']
 let g:ycm_key_list_accept_completion = ['<C-y>']
 
 " vim-markdown
-let g:markdown_fenced_languages = ["java","sh", "javascript", "html", "abap", "haskell"]
+let g:markdown_fenced_languages = ["yaml", "java","sh", "javascript", "html", "abap", "haskell"]
 
 " haskellmode-vim
 let g:haddock_browser="/usr/bin/google-chrome"
