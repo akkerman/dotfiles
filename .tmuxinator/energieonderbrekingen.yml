@@ -29,6 +29,7 @@ windows:
         - vagrant:
           - vagrant ssh
         - # zsh
+
   - documentation:
       root: ~/Documents/enexis-energy-alert
       layout: 3c14,239x57,0,0[239x48,0,0,25,239x8,0,49,26]
