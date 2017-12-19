@@ -6,6 +6,8 @@ root: ~/git/creetion/ea-development-vm
 pre: vagrant up
 tmux_options: -f ~/.tmuxinator/tmux.override.conf
 
+startup_window: project
+
 windows:
   - vm:
       layout: main-horizontal
@@ -23,10 +25,9 @@ windows:
       layout: 0d18,176x49,0,0{105x49,0,0,0,70x49,106,0[70x24,106,0,1,70x24,106,25,2]}
       panes:
         - vim:
-          - tmux select-window -t "Energie Onderbrekingen":1
           - vim +NERDTree
         - vagrant:
-            - vagrant ssh
+          - vagrant ssh
         - # zsh
   - documentation:
       root: ~/Documents/enexis-energy-alert
