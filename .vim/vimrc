@@ -171,6 +171,7 @@ let NERDTreeIgnore=['__pycache__', 'env$[[dir]]']
 nmap <leader>f :NERDTreeFind<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
+nmap <leader>gs :Gstatus<CR>
 
 " Tern
 let g:tern_map_keys=1
