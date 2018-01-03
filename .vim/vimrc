@@ -211,11 +211,10 @@ augroup END
 "}}}
 " mappings {{{
 
-" move blocks in visualmode
-vnoremap K xkP`[V`]
-vnoremap U xp`[V`]
-vnoremap L >gv
-vnoremap H <gv
+" move lines in visualmode
+xnoremap K :move '<-2'<CR>gv=gv
+xnoremap J :move '>+1'<CR>gv=gv
+
 " nnoremap <CR> o<ESC> " usesless in quickfix window...
 
 " switch buffer by number
