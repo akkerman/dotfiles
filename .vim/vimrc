@@ -41,6 +41,7 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'wincent/command-t'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
