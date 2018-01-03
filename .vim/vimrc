@@ -23,6 +23,7 @@ Plugin 'tpope/vim-commentary'    " gc adds comments
 Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-dispatch'
+Plugin 'airblade/vim-gitgutter'
 
 Plugin 'vim-scripts/argtextobj.vim'  " provides a text object for function arguments
 Plugin 'michaeljsmith/vim-indent-object' " provides a text object based on indentation level
@@ -173,6 +174,7 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <leader>gs :Gstatus<CR>
+nmap <leader>gg :GitGutterSignsToggle<CR>
 
 " Tern
 let g:tern_map_keys=1
