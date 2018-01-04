@@ -104,6 +104,13 @@ set list
 set listchars=tab:»·,trail:·
 " visualize max length
 let &colorcolumn="80,".join(range(100,999),",")
+" join lines with comments
+set formatoptions+=j
+
+" mark lines linger than 120 chars as error
+match ErrorMsg '\%>120v.\+'
+" mark trailing whitespace as error
+match ErrorMsg '\s\+$'
 
 " }}}
 " look and feel {{{
