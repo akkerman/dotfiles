@@ -13,7 +13,7 @@ call vundle#begin() " {{{2
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'cocopon/iceberg.vim'
 
@@ -37,7 +37,6 @@ Plugin 'ternjs/tern_for_vim'     " code-analysis engine for JavaScript
 Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 
 
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 Plugin 'scrooloose/nerdtree'
@@ -50,16 +49,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'akkerman/vim-jasmine'
-Plugin 'ssh://git@192.168.0.8:2222/akkerman/vim-javascript-jasmine.git'
 
-" Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'moll/vim-node'
 
 Plugin 'mboughaba/i3config.vim'
 Plugin 'godlygeek/tabular'
-
-" Plugin 'lukerandall/haskellmode-vim'
 
 Plugin 'chr4/nginx.vim'
 
