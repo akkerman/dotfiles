@@ -48,7 +48,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'christoomey/vim-tmux-runner'
 
 Plugin 'akkerman/vim-jasmine'
 Plugin 'ssh://git@192.168.0.8:2222/akkerman/vim-javascript-jasmine.git'
@@ -202,9 +201,6 @@ augroup my_stuff
     autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
     nnoremap <leader>ev :vsplit $MYVIMRC<CR>
     nnoremap <leader>sv :source $MYVIMRC<CR>
-
-    " send to tmux
-    vnoremap <leader>st :VtrSendLinesToRunner<CR>
 
     " Jasmine related
     autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript syntax=jasmine
