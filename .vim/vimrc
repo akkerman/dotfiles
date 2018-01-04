@@ -1,7 +1,7 @@
 "
 " vim: set fdm=marker fcs=fold\:\ :
 "
-" vundle {{{
+" vundle (plugins){{{
 set nocompatible              " be iMproved, required for vundle
 set noesckeys
 filetype off                  " required for vundle
@@ -56,7 +56,6 @@ Plugin 'ssh://git@192.168.0.8:2222/akkerman/vim-javascript-jasmine.git'
 Plugin 'mxw/vim-jsx'
 Plugin 'moll/vim-node'
 
-" Plugin 'bigfish/vim-js-context-coloring'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'godlygeek/tabular'
 
@@ -118,26 +117,29 @@ let &colorcolumn="80,".join(range(100,999),",")
 syntax enable
 set background=dark
 
-" airline symbols
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#taboo#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-" let g:ale_sign_column_always = 1
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
 
 " statusline (vim-airline)
 set laststatus=2   " always on
-let g:airline#extensions#tabline#enabled = 1
 
 set mouse=a
+
+set t_Co=256
+colors iceberg
 
 "}}}
 " plugin related settings {{{
 
+" airline {{{
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#taboo#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+" }}}
+" ale {{{
+" let g:ale_sign_column_always = 1
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 let g:ale_linters = { 'javascript': ['eslint']}
-nmap <silent> <F2> <Plug>(ale_next_wrap)
-nmap <silent> <F3> <Plug>(ale_previous_wrap)
 
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 1
@@ -145,43 +147,45 @@ let g:ale_lint_on_save = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
-" context coloring (default off)
-let g:js_context_colors_enabled = 0
-
-" snippets
+nmap <silent> <F2> <Plug>(ale_next_wrap)
+nmap <silent> <F3> <Plug>(ale_previous_wrap)
+" }}}
+" fugitive {{{
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gg :GitGutterSignsToggle<CR>
+"}}}
+" haskellmode-vim {{{
+let g:haddock_browser="/usr/bin/google-chrome"
+au BufEnter *.hs compiler ghc
+" }}}
+" NERDTree Tagbar {{{
+let NERDTreeIgnore=['__pycache__', 'env$[[dir]]']
+nmap <leader>f :NERDTreeFind<CR>
+nmap <F7> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+" }}}
+" python-syntax {{{
+let g:python_highlight_string_format=1
+let g:python_highlight_string_formatting=1
+" }}}
+" Tern {{{
+let g:tern_map_keys=1
+" }}}
+" UltiSnips {{{
 " let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-" youcompleteme
+" }}}
+" youcompleteme {{{
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
 let g:ycm_key_list_accept_completion = ['<C-y>']
-
-" vim-markdown
+" }}}
+" vim-markdown {{{
 let g:markdown_fenced_languages = ["yaml", "java","sh", "javascript", "html", "abap", "haskell"]
-
-" haskellmode-vim
-let g:haddock_browser="/usr/bin/google-chrome"
-au BufEnter *.hs compiler ghc
-
-" NERDTree Tagbar
-let NERDTreeIgnore=['__pycache__', 'env$[[dir]]']
-nmap <leader>f :NERDTreeFind<CR>
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gg :GitGutterSignsToggle<CR>
-
-" Tern
-let g:tern_map_keys=1
-
-" python-syntax
-let g:python_highlight_string_format=1
-let g:python_highlight_string_formatting=1
-
+" }}}
 
 "}}}
 " automate stuff {{{
@@ -222,6 +226,8 @@ nnoremap <leader>l :ls<cr>:b<space>
 nnoremap <leader>n :nohls<cr>
 " format json
 nnoremap <leader>j :%!jq '.'<cr>:set ft=json<cr>
+" copy selection to clipboard
+vnoremap <C-c> "+y
 
 " }}}
 " abbreviations {{{
@@ -264,18 +270,3 @@ nnoremap <leader>je mm[{^x`m
 nnoremap <leader>jje mm2[{^x`m
 
 " }}}
-" http://learnvimscriptthehardway.stevelosh.com/ {{{
-
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-" inoremap jk <esc>
-" inoremap <esc> :echoerr 'esc disabled, use jk'
-
-"}}}
-"
-"
-
-vnoremap <C-c> "+y
-
-set t_Co=256
-colors iceberg
