@@ -80,7 +80,7 @@ set history=200    " open with q:
 set nowrap         " do NOT wrap long lines
 set hidden         " when buffer modified and not in a window
 set autowrite      " just write file to disk in a lot of cases
-set hlsearch       " highlight matching searches
+" set hlsearch       " highlight matching searches
 set incsearch      " show first match while typing search
 " tabs
 set tabstop=4      " show existing tabs as 4 spaces
@@ -223,7 +223,7 @@ xnoremap J :move '>+1'<CR>gv=gv
 " switch buffer by number
 nnoremap <leader>l :ls<cr>:b<space>
 " switch off highlightsearch
-nnoremap <leader>n :nohls<cr>
+nnoremap <leader>n :set hlsearch!<cr>
 " format json
 nnoremap <leader>j :%!jq '.'<cr>:set ft=json<cr>
 " copy selection to clipboard
