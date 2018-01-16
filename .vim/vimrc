@@ -50,8 +50,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'akkerman/vim-jasmine'
 
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'moll/vim-node'
+Plugin 'mattn/emmet-vim'
 
 Plugin 'mboughaba/i3config.vim'
 Plugin 'godlygeek/tabular'
@@ -107,7 +109,7 @@ let &colorcolumn="80,".join(range(100,999),",")
 " join lines with comments
 set formatoptions+=j
 
-" mark lines linger than 120 chars as error
+" mark lines longer than 120 chars as error
 match ErrorMsg '\%>120v.\+'
 " mark trailing whitespace as error
 match ErrorMsg '\s\+$'
@@ -144,8 +146,8 @@ let g:ale_linters = { 'javascript': ['eslint']}
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
 
 nmap <silent> <F2> <Plug>(ale_next_wrap)
 nmap <silent> <F3> <Plug>(ale_previous_wrap)
@@ -158,8 +160,11 @@ nmap <leader>gg :GitGutterSignsToggle<CR>
 let g:haddock_browser="/usr/bin/google-chrome"
 au BufEnter *.hs compiler ghc
 " }}}
+" mxw/vim-jsx {{{
+let g:jsx_ext_required = 0
+" }}}
 " NERDTree Tagbar {{{
-let NERDTreeIgnore=['__pycache__', 'env$[[dir]]']
+let NERDTreeIgnore=['node_modules', '__pycache__', 'env$[[dir]]']
 nmap <leader>f :NERDTreeFind<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
