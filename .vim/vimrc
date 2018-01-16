@@ -30,7 +30,7 @@ Plugin 'michaeljsmith/vim-indent-object' " provides a text object based on inden
 
 Plugin 'w0rp/ale'                " syntax check
 
-Plugin 'edkolev/tmuxline.vim'    " for tmux status line
+" Plugin 'edkolev/tmuxline.vim'    " for tmux status line
 Plugin 'tmux-plugins/vim-tmux'   " syntax + more (shift+K for help e.g.)
 
 Plugin 'ternjs/tern_for_vim'     " code-analysis engine for JavaScript
@@ -165,7 +165,7 @@ au BufEnter *.hs compiler ghc
 let g:jsx_ext_required = 0
 " }}}
 " NERDTree Tagbar {{{
-let NERDTreeIgnore=['node_modules', '__pycache__', 'env$[[dir]]']
+let NERDTreeIgnore=['node_modules', '__pycache__', '\.pyc$', 'env$[[dir]]']
 nmap <leader>f :NERDTreeFind<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
