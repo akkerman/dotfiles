@@ -154,6 +154,7 @@ nmap <silent> <F3> <Plug>(ale_previous_wrap)
 " }}}
 " fugitive {{{
 nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gwrite <bar> Gcommit<CR>
 nmap <leader>gg :GitGutterSignsToggle<CR>
 "}}}
 " haskellmode-vim {{{
