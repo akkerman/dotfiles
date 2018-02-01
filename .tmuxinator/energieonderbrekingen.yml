@@ -34,4 +34,10 @@ windows:
       panes:
         - vim +NERDTree
         - guard
-    
+
+  - test-api:
+      root: ~/git/energieonderbrekingen/test-api
+      layout: even-horizontal
+      panes:
+        - docker-compose up
+        - # zsh
