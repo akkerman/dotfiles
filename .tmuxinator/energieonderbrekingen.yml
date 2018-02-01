@@ -1,7 +1,7 @@
 # ~/.tmuxinator/fp-js.yml
 
 name: Energie Onderbrekingen
-root: ~/git/creetion/ea-development-vm
+root: ~/git/energieonderbrekingen/ea-development-vm
 
 pre: vagrant up
 tmux_options: -f ~/.tmuxinator/tmux.override.conf
@@ -20,14 +20,12 @@ windows:
         - # clear
 
   - project:
-      pre: export PYTHONPATH=~/git/creetion/ea-development-vm/energieonderbrekingen.nl/shared
-      root: ~/git/creetion/ea-development-vm/energieonderbrekingen.nl
-      layout: 0d18,176x49,0,0{105x49,0,0,0,70x49,106,0[70x24,106,0,1,70x24,106,25,2]}
+      pre: export PYTHONPATH=~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl/shared
+      root: ~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl
+      layout: main-horizontal
       panes:
         - vim:
           - vim +NERDTree
-        - vagrant:
-          - vagrant ssh
         - # zsh
 
   - documentation:
