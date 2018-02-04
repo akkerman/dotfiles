@@ -13,10 +13,9 @@ call vundle#begin() " {{{2
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'cocopon/iceberg.vim'
-Plugin 'vim-scripts/greenvision'
 
 Plugin 'tpope/vim-commentary'    " gc adds comments
 Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
