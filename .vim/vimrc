@@ -72,6 +72,7 @@ Plugin 'tmhedberg/SimpylFold' " Python folding
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'vim-python/python-syntax'
 
+Plugin 'vim-scripts/vim-auto-save'
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
 
@@ -103,6 +104,7 @@ let g:netrw_liststyle = 3 " treeview
 set path+=**
 set wildmenu
 set wildmode=full
+set wildignore+=*/.pyc
 " visualize invisible characters
 set list
 set listchars=tab:»·,trail:·
@@ -132,6 +134,10 @@ set mouse=a
 set t_Co=256
 colors iceberg
 
+if has("gui_running")
+    set guifont=Source\ Code\ Pro\ 10
+endif
+
 "}}}
 " plugin related settings {{{
 
@@ -158,6 +164,7 @@ nmap <silent> <F3> <Plug>(ale_previous_wrap)
 " }}}
 " CommandT {{{
 nmap <leader>l :CommandTBuffer<CR>
+let g:CommandTWildIgnore=&wildignore . ",*.pyc,bower_components,*/node_modules"
 " }}}
 " fugitive {{{
 nmap <leader>gs :Gstatus<CR>
@@ -179,6 +186,7 @@ let g:python_highlight_string_formatting=1
 " }}}
 " Tern {{{
 let g:tern_map_keys=1
+let g:tern_show_argument_hints="on_move"
 " }}}
 " UltiSnips {{{
 " let g:UltiSnipsExpandTrigger="<c-j>"
@@ -195,6 +203,10 @@ let g:ycm_key_list_accept_completion = ['<C-y>']
 " vim-markdown {{{
 let g:markdown_fenced_languages = ["yaml", "java","sh", "javascript", "html", "abap"]
 " }}}
+" vim-auto-save {{{
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+"}}}
 
 "}}}
 " automate stuff {{{
