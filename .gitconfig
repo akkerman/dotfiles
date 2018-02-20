@@ -4,6 +4,7 @@
 [core]
     editor = vi
     autocrlf = input
+    excludesfile = /home/akkerman/.gitignore_global
 [push]
     default = simple
 [alias]
