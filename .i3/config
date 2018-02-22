@@ -10,9 +10,17 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel
+new_window pixel 1
 new_float normal
-hide_edge_borders both
+hide_edge_borders none
+exec compton --config ~/.config/compton.conf
+
+# i3-gaps
+gaps inner 10
+gaps outer -4
+# smart_gaps on
+# smart_borders on
+# /i3-gaps
 
 set $mod Mod4
 
@@ -30,6 +38,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec urxvt -fn 'xft:Source\ Code\ Pro:size=10'
+# bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -49,11 +59,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # split in horizontal orientation
-bindsym $mod+Mod1+h split h;exec notify-send -t 1500 'tile left to right'
-bindsym $mod+Mod1+backslash split h;exec notify-send -t 1500 'tile left to right'
+bindsym $mod+Mod1+backslash split h;exec notify-send -u low -t 500 'tile left to right'
 # split in vertical orientation
-bindsym $mod+Mod1+v split v;exec notify-send -t 1500 'tile top down'
-bindsym $mod+Mod1+minus split v;exec notify-send -t 1500 'tile top down'
+bindsym $mod+Mod1+minus split v;exec notify-send -u low -t 500 'tile top down'
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -76,12 +84,38 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #background color
-exec --no-startup-id xsetroot -solid "#1c1c1c"
+# exec --no-startup-id xsetroot -solid "#1c1c1c"
+# exec_always feh --bg-scale --no-xinerama ~/Dropbox/wallpapers/File\ 19-02-2018,\ 23\ 02\ 17
+exec_always feh --bg-scale --no-xinerama ~/Pictures/THE_WALLPAPER
+
+set $i3_background      #2B2C2B
+set $i3_text            #F9FAF9
+set $i3_separator       #454947
+set $i3_color1          #f9faf9
+set $i3_color2          #595B5B
+set $i3_color3          #353836
+# set $i3_color4          #16A085
+set $i3_color4          #268BD2
+set $i3_color5          #FDF6E3
+set $i3_color6          #EEE8D5
+set $i3_color7          #E5201D
+set $i3_color8          #808380
+set $i3_color9          #434745
+set $i3_color10         #454948
+set $i3_color11         #80FFF9
+set $i3_color12         #FDF6E3
+set $i3_color13         #CB4B16
+set $i3_color14         #268BD2
+set $i3_color15         #000000
+set $i3_color16         #ffffff
+set $i3_color17         #0c0c0c
+
+
 
 # i3 global {{{
 
 # reload the configuration file
-bindsym $mod+Shift+c reload;exec notify-send -t 1500 'i3 config reloaded'
+bindsym $mod+Shift+c reload;exec notify-send -u low -t 500 'i3 config reloaded'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -203,23 +237,33 @@ bindsym $mod+r mode "  "
 # (plus the system information i3status finds out, if available)
 bar {
   # strip_workspace_numbers yes
-    font pango: System San Francisco Display, FontAwesome 11
-    status_command py3status -c ~/.i3/i3status.conf
-     colors {
-        separator  #3d425b
-        background #1c1c1c
-        statusline #888888
-    #     focused_workspace #fdf6e3 #859900 #fdf6e3
-    #     active_workspace #fdf6e3 #6c71c4 #fdf6e3
-    #     inactive_workspace #586e75 #93a1a1 #002b36
-    #     urgent_workspace #d33682 #d33682 #fdf6e3
-     }
+    font pango: System San Francisco Display, FontAwesome 10
+    # status_command py3status -c ~/.i3/i3status.conf
+    status_command i3blocks -c ~/.i3/i3blocks.conf
+
+	colors {
+        background $i3_background
+        statusline $i3_text
+        separator  $i3_separator
+
+#                           border      backgr.     text
+        focused_workspace   $i3_color1  $i3_color4  $i3_text
+        active_workspace    $i3_color2  $i3_color3  $i3_color5
+        inactive_workspace  $i3_color2  $i3_color3  $i3_color6
+        urgent_workspace    $i3_color4  $i3_color5  $i3_color7
+    }
 }
 
-# client.focused #859900 #859900 #fdf6e3 #6c71c4
-# client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-# client.unfocused #073642 #073642 #93a1a1 #586e75
-# client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+
+# Theme colors
+# class                 border      backgr.     text        indic.      child_border
+client.focused          $i3_color8  $i3_color8  $i3_color11 $i3_color12
+client.focused_inactive $i3_color9  $i3_color9  $i3_color4  $i3_color10
+client.unfocused        $i3_color9  $i3_color9  $i3_color4  $i3_color10
+client.urgent           $i3_color13 $i3_color12 $i3_color4  $i3_color14
+client.placeholder      $i3_color15 $i3_color17 $i3_color16 $i3_color15 $i3_color17
+
+client.background       $i3_background
 
 # lock screen
 bindsym $mod+Mod1+l exec i3lock -c 000000
@@ -235,9 +279,9 @@ exec gnome-settings-daemon
 exec nm-applet
 
 # sound
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle && pkill -RTMIN+10 i3blocks
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
@@ -265,6 +309,7 @@ for_window [class="Spotify"] floating enable;
 # move workspace
 bindsym $mod+m move workspace to output left
 bindsym $mod+g exec google-chrome
+bindsym $mod+v exec gvim
 
 # open on startup
 exec --no-startup-id i3-msg 'workspace $workspace4; exec termite'
@@ -272,5 +317,6 @@ exec --no-startup-id i3-msg 'workspace $workspace2; exec google-chrome'
 exec --no-startup-id synergy
 exec --no-startup-id dropbox start
 # }}}
+
 
 # vim:ft=i3config fdm=marker fdc=4 fcs=fold\:\ :

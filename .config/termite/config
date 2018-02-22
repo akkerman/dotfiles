@@ -1,6 +1,9 @@
 [options]
 font = Source Code Pro Regular 10
 
+# transparency example
+# background = rgba(63, 63, 63, 0.8)
+
 # iceberg.theme
 
 [colors]
@@ -10,7 +13,9 @@ foreground      = #c6c8d1
 foreground_bold = #c6c8d1
 cursor          = #c6c8d1
 # background      = #161821
-background      = #1c1c1c
+# background      = #1c1c1c
+# background = rgba(28, 28, 28, 0.95)
+background = rgba(0, 0, 0, 0.8)
 
 # black
 color0  = #272c42
@@ -43,4 +48,6 @@ color14 = #89b8c2
 # white
 color7  = #6b7089
 color15 = #c6c8d1
+
+
 

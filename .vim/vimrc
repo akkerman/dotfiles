@@ -13,7 +13,7 @@ call vundle#begin() " {{{2
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'cocopon/iceberg.vim'
 
@@ -50,7 +50,7 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'christoomey/vim-tmux-navigator'
 
-Plugin 'akkerman/vim-jasmine'
+" Plugin 'akkerman/vim-jasmine'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -109,12 +109,15 @@ set wildignore+=*/.pyc
 set list
 set listchars=tab:»·,trail:·
 " visualize max length
-let &colorcolumn="79"
+" let &colorcolumn="79"
 " join lines with comments
 set formatoptions+=j
 
+set fillchars=fold:·
+
+
 " mark lines longer than 90 chars as error
-match ErrorMsg '\%>90v.\+'
+" match ErrorMsg '\%>90v.\+'
 " mark trailing whitespace as error
 match ErrorMsg '\s\+$'
 
@@ -136,6 +139,18 @@ colors iceberg
 
 if has("gui_running")
     set guifont=Source\ Code\ Pro\ 10
+else
+    highlight clear CursorLine
+    highlight Normal ctermbg=none
+    highlight LineNr ctermbg=none
+    highlight CursorLineNr ctermbg=none
+    highlight SpecialKey ctermbg=none
+    highlight VertSplit ctermbg=none
+    highlight SignColumn ctermbg=none
+    highlight FoldColumn ctermbg=none
+    highlight Folded ctermbg=none
+    highlight NonText ctermbg=none
+    highlight EndOfBuffer ctermbg=none
 endif
 
 "}}}
@@ -231,6 +246,17 @@ augroup my_stuff
     autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript syntax=jasmine
 augroup END
 
+function! AdaptColorscheme()
+    highlight clear CursorLine
+    highlight Normal ctermbg=none
+    highlight LineNr ctermbg=none
+    highlight Folded ctermbg=none
+    highlight NonText ctermbg=none
+    highlight SpecialKey ctermbg=none
+    highlight VertSplit ctermbg=none
+    highlight SignColumn ctermbg=none
+endfunction
+autocmd ColorScheme * call AdaptColorscheme()
 
 "}}}
 " mappings {{{
