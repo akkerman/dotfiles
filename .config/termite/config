@@ -12,10 +12,11 @@ font = Source Code Pro Regular 10
 foreground      = #c6c8d1
 foreground_bold = #c6c8d1
 cursor          = #c6c8d1
-# background      = #161821
+background      = #161821
 # background      = #1c1c1c
 # background = rgba(28, 28, 28, 0.95)
-background = rgba(0, 0, 0, 0.8)
+# background = rgba(0, 0, 0, 0.8)
+# background = #000000
 
 # black
 color0  = #272c42
