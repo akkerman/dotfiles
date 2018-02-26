@@ -13,7 +13,7 @@
 danger = #90cc6666
 warn = #90f0c674
 success = #90b5bd68
-background = #90161821
+background = #cd161821
 background_focused = #902c3145
 background_danger = #90a54242
 background_warn = #90de935f
