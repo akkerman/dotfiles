@@ -12,8 +12,8 @@ call vundle#begin() " {{{2
 " let Vundle manage Vundle, required for vundle
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'cocopon/iceberg.vim'
 
