@@ -1,6 +1,0 @@
-if [[ $1 == 'force' ]] ; then 
-  rm -f /tmp/.X11-unix/X30
-  rm -f /tmp/.X30-lock
-fi
-
-vncserver -geometry 1200x675 :30
