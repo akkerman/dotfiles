@@ -328,13 +328,14 @@ exec --no-startup-id dropbox start
 
 
 # monitor setup {{{
-set $mode_monitor External Monitor: (l) left, (o) off, (r) right, (a) above
+set $mode_monitor External Monitor: (l) left, (r) right, (t) two, (o) off,  (a) above
 
 bindsym $mod+Shift+m mode "$mode_monitor"
 
 mode "$mode_monitor" {
     bindsym l exec chscreen left
     bindsym r exec chscreen right
+    bindsym t exec chscreen two
     bindsym o exec chscreen off
     bindsym a exec chscreen top
 
