@@ -328,4 +328,21 @@ exec --no-startup-id dropbox start
 # }}}
 
 
+# monitor setup {{{
+set $mode_monitor External Monitor: (l) left, (o) off, (r) right, (a) above
+
+bindsym $mod+Shift+m mode "$mode_monitor"
+
+mode "$mode_monitor" {
+    bindsym l exec chscreen left
+    bindsym r exec chscreen right
+    bindsym o exec chscreen off
+    bindsym a exec chscreen top
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# / monior setup }}}
+
 # vim:ft=i3config fdm=marker fdc=4 fcs=fold\:\ :
