@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case "$1"
+    in
+    two)
+        # two screens
+        xrandr --output DVI-I-0 --auto --output DVI-D-0 --primary --auto --right-of DVI-I-0
+        ;;
+    right)
+        # left off
+        xrandr --output DVI-I-0 --off --output DVI-D-0 --primary --auto
+        ;;
+    left)
+        # right off
+        xrandr --output DVI-I-0 --primary --auto --output DVI-D-0 --off
+        ;;
+esac
