@@ -238,30 +238,8 @@ bindsym $mod+r mode "  "
 
 # }}}2
 # }}}
-# Start i3bar to display a workspace bar {{{
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# (plus the system information i3status finds out, if available)
-# bar {
-#   # strip_workspace_numbers yes
-#     font pango: System San Francisco Display, FontAwesome 10
-#     # status_command py3status -c ~/.i3/i3status.conf
-#     status_command i3blocks -c ~/.i3/i3blocks.conf
-
-# 	colors {
-#         background $i3_background
-#         statusline $i3_text
-#         separator  $i3_separator
-
-# #                           border      backgr.     text
-#         focused_workspace   $i3_color1  $i3_color4  $i3_text
-#         active_workspace    $i3_color2  $i3_color3  $i3_color5
-#         inactive_workspace  $i3_color2  $i3_color3  $i3_color6
-#         urgent_workspace    $i3_color4  $i3_color5  $i3_color7
-#     }
-# }
-
 
 # Theme colors
 # class                 border      backgr.     text        indic.      child_border
@@ -302,7 +280,6 @@ bindsym XF86MonBrightnessDown exec light -U 5
 
 # load sound applet
 exec /usr/bin/pasystray
-# }}}
 # Application specific settings {{{
 # Open applications on specific workspace
 assign [class="Gitg"] $workspace3
@@ -320,7 +297,7 @@ bindsym $mod+g exec google-chrome
 bindsym $mod+v exec gvim
 
 # open on startup
-exec --no-startup-id i3-msg 'workspace $workspace4; exec termite'
+exec --no-startup-id i3-msg 'workspace $workspace4; exec $term'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec google-chrome'
 exec --no-startup-id synergy
 exec --no-startup-id dropbox start
