@@ -13,16 +13,17 @@
 new_window pixel 1
 new_float normal
 hide_edge_borders none
+
 exec compton --config ~/.config/compton.conf
-
 exec --no-startup-id dunst
+exec_always setxkbmap -layout us
 
-# i3-gaps
+# i3-gaps {{{
 gaps inner 10
 gaps outer -4
 # smart_gaps on
 # smart_borders on
-# /i3-gaps
+# /i3-gaps }}}
 
 set $mod Mod4
 
