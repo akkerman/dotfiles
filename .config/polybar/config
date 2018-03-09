@@ -63,7 +63,7 @@ font-3 = siji:pixelsize=12
 font-4 = Source Code Pro:size=10
 
 modules-left = i3
-modules-center =  memory cpu temperature battery
+modules-center =  memory cpu temperature temperature-cpu battery
 modules-right =  backlight-acpi volume wlan date powermenu
 
 tray-position = right
@@ -287,6 +287,26 @@ animation-charging-framerate = 750
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = ${colors.underline_default}
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${colors.underline_warn}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.underline_warn}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/temperature-cpu]
+type = internal/temperature
+thermal-zone = 5
+warn-temperature = 60
+
 
 format = <ramp> <label>
 format-underline = ${colors.underline_default}
