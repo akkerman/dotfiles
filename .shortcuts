@@ -1,3 +1,5 @@
+# vim: ft=zsh
+
 # docker
 alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print \$3}")'
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
@@ -18,20 +20,40 @@ alias dot=config
 # edit
 alias vim.='vim .'
 alias v='vim'
+
+# edit config files
 alias cfz='vim ~/.zshrc'
 alias cfi='vim ~/.config/i3/config'
 alias cft='vim ~/.config/termite/config'
 alias cfv='vim ~/.vim/vimrc'
-alias cfs='vim ~/.shortcuts'
-alias cfa='vim ~/.shortcuts'
+alias cfs='vim ~/.shortcuts && source ~/.shortcuts'
+alias cfp='vim ~/.config/polybar/*'
+
+# source files
+alias sos='source ~/.shortcuts && echo "shortcuts loaded"'
+alias soz='source ~/.zshrc'
 
 # listing
 alias l=' ls -lAF --group-directories-first'
 alias ltr='ls -ltr'
 
+# change directory
+alias cde='z energieonderbrekingen.nl'
+
 
 # send alert upon command completion
-alias alert='notify-send -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias send='notify-send -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"  "test test"'
 
 
 alias mine='sudo chown -R akkerman.akkerman *'
+alias dfree='df ; echo ; df -h'
+alias tail0='clear ; tail -f -n0'
+alias psgrep='ps -ef | grep -v grep | grep -i --color=auto'
+alias wgetit='wget --recursive --level=1 --no-clobber --page-requisites --html-extension --convert-links --no-parent'
+
+function isup() {
+    sudo nmap  -sn  192.168.0.1-10 192.168.0.100-150 192.168.0.234 | sed "s/\(Nmap [scan|done]\)/\n\1/g"
+}
+
+# show disk and temperature
+alias dtemp="sudo hddtemp `sudo fdisk -l  | grep Disk\ / | grep dev | awk  '{print $2}' | sed -e 's/.$//' `"
