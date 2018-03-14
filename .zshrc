@@ -8,7 +8,6 @@ export ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="agnoster"
 ZSH_THEME="avit"
 
-alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print \$3}")'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -51,14 +50,14 @@ alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose bower grunt z npm yarn aws httpie pip tmux tmuxinator)
-plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose z pip tmux tmuxinator kubectl kompose aws)
+plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose bower grunt z npm yarn aws httpie pip tmux tmuxinator)
+# plugins=(git gitignore git-flow docker docker-compose z)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/akkerman/.gem/ruby/2.3.0/bin::/home/akkerman/.local/bin:/home/akkerman/bin:/opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/bin:/home/akkerman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/akkerman/anaconda3/bin:/home/akkerman/bin:/home/akkerman/.local/bin:opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/bin:/home/akkerman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -80,17 +79,17 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source ~/bin/bashrc
-
 setopt correct
 
+# vi mode
 bindkey -v
+bindkey -M vicmd v edit-command-line
+# /vi mode
 export KEYTIMEOUT=1
 bindkey '^R' history-incremental-search-backward
 
 eval "$(thefuck --alias)"
 
-alias mine='sudo chown -R akkerman.akkerman *'
 #source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.tmuxinator/autocomplete-tmuxinator.zsh
@@ -98,21 +97,13 @@ source ~/.tmuxinator/autocomplete-tmuxinator.zsh
 
 DISABLE_AUTO_TITLE=true
 
-
 # history ignore options
 setopt histignorespace
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dotfiles=config
-alias dot=config
-alias vim.='vim .'
-alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
-
 # TERM=xterm-256color
-
-bindkey -M vicmd v edit-command-line
 
 export NVM_DIR="/home/akkerman/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-alias tpwd='tmux new -s "$(basename $PWD)"'
+source ~/.shortcuts
+

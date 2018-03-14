@@ -30,15 +30,13 @@ foreground-alt = #9081a2be
 margin-top = 5
 margin-bottom = 5
 
-[bar/bottom]
+[bar/base]
 bottom = true
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 
 offset-x = 0
 offset-y = 0
 
-;background = ${xrdb:color9}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -47,8 +45,6 @@ overline-color = #f00
 underline-size = 2
 underline-color = #00f
 
-; border-bottom-size = 2
-; border-bottom-color = #333
 border-size = 5
 
 padding-left = 0
@@ -62,6 +58,14 @@ font-2 = unifont:fontformat=truetype:size=6:heavy;-2
 font-3 = siji:pixelsize=12
 font-4 = Source Code Pro:size=10
 
+[bar/secondary]
+inherit = bar/base
+monitor = DVI-I-0
+modules-right = i3
+
+[bar/primary]
+inherit = bar/base
+monitor = DVI-D-0
 modules-left = i3
 modules-center =  memory cpu temperature temperature-cpu battery
 modules-right =  backlight-acpi volume wlan date powermenu
@@ -106,6 +110,8 @@ format = <label-state> <label-mode>
 format-margin = 2
 index-sort = true
 wrapping-scroll = false
+
+pin-workspaces = true
 
 label-focused = %name%
 label-focused-underline = ${colors.underline_default}
@@ -306,7 +312,6 @@ ramp-foreground = ${colors.foreground-alt}
 type = internal/temperature
 thermal-zone = 5
 warn-temperature = 60
-
 
 format = <ramp> <label>
 format-underline = ${colors.underline_default}

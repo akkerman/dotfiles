@@ -40,7 +40,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-set $term termite
+set $term ~/bin/st
 bindsym $mod+Return split h ;; exec $term
 bindsym $mod+Shift+Return split v ;; exec $term
 
@@ -173,6 +173,9 @@ bindsym $mod+Shift+8 move container to workspace $workspace8; workspace $workspa
 bindsym $mod+Shift+9 move container to workspace $workspace9; workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $workspace10
 
+bindsym $mod+Mod1+2 exec --no-startup-id ~/.i3/load-2.sh
+bindsym $mod+Mod1+7 exec --no-startup-id ~/.i3/load-7.sh
+
 # Navigate workspaces next / previous
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
@@ -290,6 +293,8 @@ assign [class="Google-chrome" title="VNC® Viewer for Google Chrome™"] $worksp
 
 # Open applications in floating mode
 for_window [class="Spotify"] floating enable;
+for_window [class="Virtualbox"] floating enable;
+for_window [class="Virtualbox Machine"] floating enable;
 
 # move workspace
 bindsym $mod+m move workspace to output left
@@ -305,7 +310,7 @@ exec --no-startup-id dropbox start
 
 
 # monitor setup {{{
-set $mode_monitor External Monitor: (l) left, (r) right, (t) two, (o) off,  (a) above
+set $mode_monitor Monitor Setup: (l) left, (r) right, (t) two, (o) off,  (a) above
 
 bindsym $mod+Shift+m mode "$mode_monitor"
 
