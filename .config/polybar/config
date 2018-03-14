@@ -31,6 +31,7 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/base]
+monitor = ${env:MONITOR}
 bottom = true
 width = 100%
 
@@ -60,12 +61,10 @@ font-4 = Source Code Pro:size=10
 
 [bar/secondary]
 inherit = bar/base
-monitor = DVI-I-0
 modules-right = i3
 
 [bar/primary]
 inherit = bar/base
-monitor = DVI-D-0
 modules-left = i3
 modules-center =  memory cpu temperature temperature-cpu battery
 modules-right =  backlight-acpi volume wlan date powermenu
