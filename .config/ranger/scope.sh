@@ -68,6 +68,9 @@ case "$extension" in
         try lynx   -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         try elinks -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         ;; # fall back to highlight/cat if the text browsers fail
+    # ebooks:
+    mobi|epub)
+        try ebook-meta "$path" && { dump ; exit 0; }  || exit 0 ;;
 esac
 
 case "$mimetype" in
