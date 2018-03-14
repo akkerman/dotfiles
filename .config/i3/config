@@ -315,11 +315,11 @@ set $mode_monitor Monitor Setup: (l) left, (r) right, (t) two, (o) off,  (a) abo
 bindsym $mod+Shift+m mode "$mode_monitor"
 
 mode "$mode_monitor" {
-    bindsym l exec chscreen left
-    bindsym r exec chscreen right
-    bindsym t exec chscreen two
-    bindsym o exec chscreen off
-    bindsym a exec chscreen top
+    bindsym l exec $HOME/bin/chscreen left  ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
+    bindsym r exec $HOME/bin/chscreen right ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
+    bindsym t exec $HOME/bin/chscreen two   ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
+    bindsym o exec $HOME/bin/chscreen off   ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
+    bindsym a exec $HOME/bin/chscreen top   ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
