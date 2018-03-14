@@ -1,1 +1,0 @@
-psgrep $@ | awk '{print $2}' 
