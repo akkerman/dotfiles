@@ -45,7 +45,7 @@ alias cde='z energieonderbrekingen.nl'
 alias send='notify-send -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"  "test test"'
 
 
-alias mine='sudo chown -R akkerman.akkerman *'
+# alias mine='sudo chown -R akkerman.akkerman *'
 alias dfree='df ; echo ; df -h'
 alias tail0='clear ; tail -f -n0'
 alias psgrep='ps -ef | grep -v grep | grep -i --color=auto'
@@ -56,4 +56,6 @@ function isup() {
 }
 
 # show disk and temperature
-alias dtemp="sudo hddtemp `sudo fdisk -l  | grep Disk\ / | grep dev | awk  '{print $2}' | sed -e 's/.$//' `"
+function dtemp() {
+    sudo hddtemp `sudo fdisk -l  | grep Disk\ / | grep dev | awk  '{print $2}' | sed -e 's/.$//'`
+}
