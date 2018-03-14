@@ -20,7 +20,10 @@ alias vim.='vim .'
 alias v='vim'
 alias cfz='vim ~/.zshrc'
 alias cfi='vim ~/.config/i3/config'
+alias cft='vim ~/.config/termite/config'
 alias cfv='vim ~/.vim/vimrc'
+alias cfs='vim ~/.shortcuts'
+alias cfa='vim ~/.shortcuts'
 
 # listing
 alias l=' ls -lAF --group-directories-first'
