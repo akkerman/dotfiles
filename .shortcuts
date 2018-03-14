@@ -28,6 +28,7 @@ alias cft='vim ~/.config/termite/config'
 alias cfv='vim ~/.vim/vimrc'
 alias cfs='vim ~/.shortcuts && source ~/.shortcuts'
 alias cfp='vim ~/.config/polybar/*'
+alias cfr='vim ~/.config/ranger/rc.conf ~/.config/ranger/scope.sh'
 
 # source files
 alias sos='source ~/.shortcuts && echo "shortcuts loaded"'
