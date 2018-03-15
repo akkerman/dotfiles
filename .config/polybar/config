@@ -13,13 +13,14 @@
 danger = #90cc6666
 warn = #90f0c674
 success = #90b5bd68
-; background = #cd282a2e
 background = #00000000
 background_focused = #90373b41
+background_visible = #40373b41
 background_danger = #90a54242
 background_warn = #90de935f
 background_success = #908c9440
 underline_default = #9081a2be
+underline_visible = #2081a2be
 underline_danger = ${colors.danger}
 underline_warn = ${colors.warn}
 underline_success = ${colors.success}
@@ -134,6 +135,8 @@ label-urgent-padding = 2
 label-urgent-margin = 1
 
 label-visible = %name%
+label-visible-underline = ${colors.underline_visible}
+label-visible-background = ${colors.background_visible}
 label-visible-padding = 2
 label-visible-margin = 1
 
