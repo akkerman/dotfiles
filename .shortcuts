@@ -3,11 +3,14 @@
 # docker
 alias docker_rm_none='docker rmi $(docker images | grep "^<none>" | awk "{print \$3}")'
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
-alias dc=docker-compose
-alias dcub=docker-compose up -d --build
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcub='docker-compose up -d --build'
 
 # git
 alias g=git
+alias gc='git commit'
+alias gco='git checkout'
 
 # tmux
 alias tpwd='tmux new -s "$(basename $PWD)"'
@@ -26,7 +29,7 @@ alias cfz='vim ~/.zshrc'
 alias cfi='vim ~/.config/i3/config'
 alias cft='vim ~/.config/termite/config'
 alias cfv='vim ~/.vim/vimrc'
-alias cfs='vim ~/.shortcuts && source ~/.shortcuts'
+alias cfs='vim ~/.shortcuts && sos'
 alias cfp='vim ~/.config/polybar/*'
 alias cfr='vim ~/.config/ranger/rc.conf ~/.config/ranger/scope.sh'
 
@@ -59,4 +62,9 @@ function isup() {
 # show disk and temperature
 function dtemp() {
     sudo hddtemp `sudo fdisk -l  | grep Disk\ / | grep dev | awk  '{print $2}' | sed -e 's/.$//'`
+}
+
+# directory
+function mkcd() {
+    mkdir $1 && cd $1
 }
