@@ -255,7 +255,7 @@ client.placeholder      $i3_color15 $i3_color17 $i3_color16 $i3_color15 $i3_colo
 client.background       $i3_background
 
 # lock screen
-bindsym $mod+Mod1+l exec i3lock -c 000000
+bindsym $mod+Mod1+l exec ~/.config/i3/lock.sh
 
 # Get Rid of Desktop Window While Launching Nautilus
 exec gsettings set org.gnome.desktop.background show-desktop-icons false
