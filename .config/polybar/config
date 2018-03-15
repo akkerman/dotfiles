@@ -13,8 +13,9 @@
 danger = #90cc6666
 warn = #90f0c674
 success = #90b5bd68
-background = #cd282a2e
-background_focused = #cd373b41
+; background = #cd282a2e
+background = #00000000
+background_focused = #90373b41
 background_danger = #90a54242
 background_warn = #90de935f
 background_success = #908c9440
@@ -27,8 +28,8 @@ foreground = #c6c8d0
 foreground-alt = #9081a2be
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 [bar/base]
 monitor = ${env:MONITOR}
@@ -46,7 +47,9 @@ overline-color = #f00
 underline-size = 2
 underline-color = #00f
 
-border-size = 5
+line-size = 3
+
+border-size = 0
 
 padding-left = 0
 padding-right = 0
@@ -66,13 +69,13 @@ modules-right = i3
 [bar/primary]
 inherit = bar/base
 modules-left = i3 spotify
-modules-center = memory cpu temperature temperature-cpu battery
+modules-center = filesystem memory cpu temperature temperature-cpu battery
 modules-right = backlight-acpi volume wlan date powermenu
 
 tray-position = right
 tray-padding = 9
 ; tray-transparent = true
-tray-background = #161821
+; tray-background = #161821
 
 ; wm-restack = bspwm
 ; wm-restack = i3
@@ -95,12 +98,13 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /home
-mount-2 = /invalid/mountpoint
+mount-1 = /stronghold
+mount-2 = /opt2
 
-label-mounted = %mountpoint%: %percentage_free%%
+label-mounted = %{F#9081a2be}%mountpoint%%{F-}: %percentage_used%%
 
-label-unmounted = %mountpoint%: not mounted
+; label-unmounted = %mountpoint%: not mounted
+label-unmounted =
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
@@ -120,11 +124,12 @@ label-focused-margin = 1
 
 label-unfocused = %name%
 label-unfocused-padding = 2
-label-unfocused-underline = #161821
+label-unfocused-underline = #00000000
 label-unfocused-margin = 1
 
 label-urgent = %name%
-label-urgent-background = ${colors.danger}
+label-urgent-background = ${colors.background_danger}
+label-urgent-underline = ${colors.underline_danger}
 label-urgent-padding = 2
 label-urgent-margin = 1
 
