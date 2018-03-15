@@ -32,7 +32,7 @@ margin-bottom = 5
 
 [bar/base]
 monitor = ${env:MONITOR}
-bottom = true
+; bottom = true
 width = 100%
 
 offset-x = 0
@@ -65,9 +65,9 @@ modules-right = i3
 
 [bar/primary]
 inherit = bar/base
-modules-left = i3
-modules-center =  memory cpu temperature temperature-cpu battery
-modules-right =  backlight-acpi volume wlan date powermenu
+modules-left = i3 spotify
+modules-center = memory cpu temperature temperature-cpu battery
+modules-right = backlight-acpi volume wlan date powermenu
 
 tray-position = right
 tray-padding = 9
@@ -353,3 +353,9 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/spotify]
+type=custom/script
+exec = ~/.config/polybar/spotify.sh %artist% - %album% - %title%
+label =  %output%
+tail = true
+interval = 2
