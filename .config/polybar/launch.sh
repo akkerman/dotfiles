@@ -16,7 +16,7 @@ else
     MONITOR="$PRIMARY_DISPLAY" polybar primary &
 fi
 
-if [ -z $SECONDARY_DISPLAY]; then
+if [[ -z $SECONDARY_DISPLAY ]]; then
     echo "secondary: NONE"
 else
     echo "secondary $SECONDARY_DISPLAY"
