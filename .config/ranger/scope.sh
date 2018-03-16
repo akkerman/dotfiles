@@ -70,7 +70,11 @@ case "$extension" in
         ;; # fall back to highlight/cat if the text browsers fail
     # ebooks:
     mobi|epub)
-        try ebook-meta "$path" && { dump ; exit 0; }  || exit 0 ;;
+        try ebook-meta "$path" && { dump ; exit 0; }  || exit 1 ;;
+    odt)
+        try odt2txt "$path" && { dump ; exit 0; }  || exit 1 ;;
+    json)
+        try jq -C '.' "$path" && { dump ; exit 0; }  || exit 1 ;;
 esac
 
 case "$mimetype" in
