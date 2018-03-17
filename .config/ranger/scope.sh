@@ -75,6 +75,10 @@ case "$extension" in
         try odt2txt "$path" && { dump ; exit 0; }  || exit 1 ;;
     json)
         try jq -C '.' "$path" && { dump ; exit 0; }  || exit 1 ;;
+    xlsx)
+        # pip install xlsx2csv
+        try xlsx2csv "$path" && { dump ; exit 0; } || exit 1;;
+
 esac
 
 case "$mimetype" in
