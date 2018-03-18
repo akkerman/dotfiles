@@ -69,25 +69,16 @@ modules-right = i3
 
 [bar/primary]
 inherit = bar/base
-modules-left = i3 spotify
-modules-center = filesystem memory cpu temperature temperature-cpu battery
-modules-right = backlight-acpi volume wlan date
+modules-left = i3
+modules-center=spotify
+modules-right = backlight-acpi volume wlan apt-updates battery date
 
 tray-position = right
 tray-padding = 9
-; tray-transparent = true
-; tray-background = #161821
 
-; wm-restack = bspwm
-; wm-restack = i3
-
-; override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+[bar/performance]
+inherit = bar/base
+modules-center = filesystem memory cpu temperature temperature-cpu battery apt-updates
 
 
 [module/xwindow]
@@ -207,14 +198,15 @@ interface = wlp58s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.underline_default}
-format-disconnected-underline = #333333
+format-connected-underline = ${colors.underline_success}
+format-disconnected-underline = ${colors.underline_danger}
 
 label-connected = %essid% %local_ip%
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.warn}
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
@@ -280,19 +272,27 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${colors.underline_warn}
 label-discharging = %percentage%% (%time%)
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${colors.underline_default}
 
-ramp-capacity-0 = 
+ramp-capacity-0 = 
 ramp-capacity-0-foreground = #cc6666
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-1 = 
+ramp-capacity-1-foreground  = #90de935f
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; animation-charging-0 = 
+; animation-charging-1 = 
+; animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -340,3 +340,12 @@ exec = ~/.config/polybar/spotify.sh %artist% - %album% - %title%
 label =  %output%
 tail = true
 interval = 2
+
+[module/apt-updates]
+type = custom/script
+exec = ~/.config/polybar/module_apt.py
+interval = 600
+
+format-prefix = " "
+format-prefix-foreground = ${colors.danger}
+format-underline = ${colors.underline_danger}
