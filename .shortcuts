@@ -46,7 +46,7 @@ alias cde='z energieonderbrekingen.nl'
 
 
 # send alert upon command completion
-alias send='notify-send -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"  "test test"'
+alias alert='notify-send -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
 # alias mine='sudo chown -R akkerman.akkerman *'
