@@ -337,7 +337,7 @@ ramp-foreground = ${colors.foreground-alt}
 [module/spotify]
 type=custom/script
 exec = ~/.config/polybar/spotify.sh %artist% - %album% - %title%
-label =  %output%
+label = %{F#1db954}%{F-} %output%
 tail = true
 interval = 2
 
