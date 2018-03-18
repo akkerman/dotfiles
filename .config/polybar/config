@@ -70,7 +70,7 @@ modules-right = i3
 [bar/primary]
 inherit = bar/base
 modules-left = i3
-modules-center=spotify
+modules-center=spotify vm-eonl vm-win vm-minikube
 modules-right = backlight-acpi volume wlan apt-updates battery date
 
 tray-position = right
@@ -79,7 +79,6 @@ tray-padding = 9
 [bar/performance]
 inherit = bar/base
 modules-center = filesystem memory cpu temperature temperature-cpu battery apt-updates
-
 
 [module/xwindow]
 type = internal/xwindow
@@ -348,3 +347,18 @@ interval = 600
 format-prefix = " "
 format-prefix-foreground = ${colors.danger}
 format-underline = ${colors.underline_danger}
+
+[module/vm-eonl]
+type = custom/script
+exec = ~/.config/polybar/module_vmip.py ea-dev "%{u#b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be} %ip%%{F-}"
+interval = 30
+
+[module/vm-win]
+type = custom/script
+exec = ~/.config/polybar/module_vmip.py Windows "%{u#b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be}  %{F-}"
+interval = 33
+
+[module/vm-minikube]
+type = custom/script
+exec = ~/.config/polybar/module_vmip.py minikube "%{u#b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" ""
+interval = 61
