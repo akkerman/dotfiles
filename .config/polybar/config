@@ -350,15 +350,15 @@ format-underline = ${colors.underline_danger}
 
 [module/vm-eonl]
 type = custom/script
-exec = ~/.config/polybar/module_vmip.py ea-dev "%{u#b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be} %ip%%{F-}"
+exec = ~/.config/polybar/module_vmip.py ea-dev "%{u#90b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be} %ip%%{F-}"
 interval = 30
 
 [module/vm-win]
 type = custom/script
-exec = ~/.config/polybar/module_vmip.py Windows "%{u#b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be}  %{F-}"
+exec = ~/.config/polybar/module_vmip.py Windows "%{u#90b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be}  %{F-}"
 interval = 33
 
 [module/vm-minikube]
 type = custom/script
-exec = ~/.config/polybar/module_vmip.py minikube "%{u#b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" ""
+exec = ~/.config/polybar/module_vmip.py minikube "%{u#90b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" ""
 interval = 61
