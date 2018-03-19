@@ -32,6 +32,7 @@ alias cfv='vim ~/.vim/vimrc'
 alias cfs='vim ~/.shortcuts && sos'
 alias cfp='vim ~/.config/polybar/*'
 alias cfr='vim ~/.config/ranger/rc.conf ~/.config/ranger/scope.sh'
+alias cfc='vim ~/.config/compton/compton.conf'
 
 # source files
 alias sos='source ~/.shortcuts && echo "shortcuts loaded"'
