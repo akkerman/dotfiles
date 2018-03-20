@@ -294,8 +294,9 @@ bindsym $mod+s [instance="spotify"] scratchpad show
 
 ## quick terminal
 exec --no-startup-id $term -n pulldown
-# making it as small as possible mostly ends op in 75x50, I want 1620x400 ->  grow 1545x350
-for_window [instance="pulldown"] move scratchpad; [instance="pulldown"] scratchpad show; move position 150px 30px; resize shrink height 10000px; resize shrink  width 10000px; resize grow height 350px; resize grow width 1545px;  move scratchpad
+# making it as small as possible mostly ends op in 75x50, I want centered with 150px margin
+# 1920x1080 -> 1680x830 -> 1595x720
+for_window [instance="pulldown"] move scratchpad; [instance="pulldown"] scratchpad show; move position 200px 150px; resize shrink height 10000px; resize shrink  width 10000px; resize grow height 730px; resize grow width 1445px;  move scratchpad
 bindsym $mod+t [instance="pulldown"] scratchpad show
 
 
