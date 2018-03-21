@@ -280,7 +280,7 @@ bindsym $mod+v exec gvim
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/compton/launch.sh
 exec_always --no-startup-id setxkbmap -layout us
-exec_always --no-startup-id feh --bg-scale --no-xinerama $HOME/Pictures/THE_WALLPAPER
+exec_always --no-startup-id $HOME/.fehbg
 exec --no-startup-id dunst
 exec --no-startup-id synergy
 exec --no-startup-id dropbox start
