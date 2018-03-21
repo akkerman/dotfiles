@@ -295,7 +295,7 @@ for_window [instance="spotify"] move scratchpad; [instance="spotify"] scratchpad
 bindsym $mod+s [instance="spotify"] scratchpad show
 
 ## quick terminal
-exec --no-startup-id $term -n dropdown -e mux start remote -n dropdown
+exec --no-startup-id $term -n dropdown -e $HOME/.gem/ruby/2.3.0/bin/tmuxinator start remote -n dropdown
 # making it as small as possible mostly ends op in 75x50, I want centered with 150px margin
 # 1920x1080 -> 1680x830 -> 1595x720
 for_window [instance="dropdown"] border pixel 0
