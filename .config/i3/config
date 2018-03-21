@@ -18,9 +18,11 @@ hide_edge_borders none
 
 # i3-gaps {{{
 gaps inner 10
-gaps outer -4
+gaps outer 0
 # smart_gaps on
-# smart_borders on
+smart_borders on
+
+
 # /i3-gaps }}}
 
 set $mod Mod4
@@ -37,7 +39,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-set $term $HOME/bin/st
+set $term st
 # bindsym $mod+Return split h ;; exec $term
 # bindsym $mod+Shift+Return split v ;; exec $term
 bindsym $mod+Return exec $term
@@ -293,11 +295,12 @@ for_window [instance="spotify"] move scratchpad; [instance="spotify"] scratchpad
 bindsym $mod+s [instance="spotify"] scratchpad show
 
 ## quick terminal
-exec --no-startup-id $term -n pulldown
+exec --no-startup-id $term -n dropdown -e mux start remote dropdown
 # making it as small as possible mostly ends op in 75x50, I want centered with 150px margin
 # 1920x1080 -> 1680x830 -> 1595x720
-for_window [instance="pulldown"] move scratchpad; [instance="pulldown"] scratchpad show; move position 200px 150px; resize shrink height 10000px; resize shrink  width 10000px; resize grow height 730px; resize grow width 1445px;  move scratchpad
-bindsym $mod+t [instance="pulldown"] scratchpad show
+for_window [instance="dropdown"] border pixel 0
+for_window [instance="dropdown"] move scratchpad; [instance="dropdown"] scratchpad show;  move position 200px 150px; resize shrink height 10000px; resize shrink  width 10000px; resize grow height 730px; resize grow width 1445px;  move scratchpad
+bindsym $mod+t [instance="dropdown"] scratchpad show
 
 
 # monitor setup {{{
