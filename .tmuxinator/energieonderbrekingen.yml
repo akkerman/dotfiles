@@ -3,7 +3,8 @@
 name: Energie Onderbrekingen
 root: ~/git/energieonderbrekingen/ea-development-vm
 
-pre: vagrant up
+on_project_first_start: vagrant up
+on_project_stop: vagrant halt
 tmux_options: -f ~/.tmuxinator/tmux.override.conf
 
 startup_window: project
