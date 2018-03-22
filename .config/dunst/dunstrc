@@ -6,7 +6,7 @@
     format = "<b>%s</b>\n%b\n\n<small>%a</small>"
     frame_color = "#901d1f21"
     frame_width = 0
-    geometry = "0x5-6+30"
+    geometry = "0x5-15+35"
     horizontal_padding = 8
     icon_position = left
     idle_threshold = 120
