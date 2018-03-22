@@ -18,4 +18,4 @@ rofi.opacity:           756060
 rofi.hide-scrollbar:    true
 rofi.width:             30
 
-rofi.terminal: /home/akkerman/bin/st
+rofi.terminal: st
