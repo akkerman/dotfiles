@@ -49,8 +49,8 @@
                     "percent": 0.168582775919732,
                     "swallows": [
                        {
-                        "class": "^Termite$",
-                        "instance": "^termite$"
+                        "class": "^st-256color$",
+                        "instance": "^htop$"
                        }
                     ],
                     "type": "con"
@@ -88,7 +88,7 @@
                             "swallows": [
                                {
                                "class": "^TelegramDesktop$",
-                               "instance": "^Telegram$"
+                               "instance": "^telegram$"
                                }
                             ],
                             "type": "con"
