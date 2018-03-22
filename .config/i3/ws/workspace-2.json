@@ -1,0 +1,102 @@
+// vim:ts=4:sw=4:et
+{
+    // splith split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1032,
+               "width": 947,
+               "x": 2886,
+               "y": 7
+            },
+            "name": "Google Chrome",
+            "percent": 0.520547945205479,
+            "swallows": [
+               {
+                "class": "^Google\\-chrome$",
+                "instance": "^google\\-chrome$",
+                "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // splitv split container with 2 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.479452054794521,
+            "type": "con",
+            "nodes": [
+                {
+                    // splith split container with 1 children
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "layout": "splith",
+                    "percent": 0.5,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            // splith split container with 1 children
+                            "border": "pixel",
+                            "floating": "auto_off",
+                            "layout": "splith",
+                            "percent": 1,
+                            "type": "con",
+                            "nodes": [
+                                {
+                                    "border": "pixel",
+                                    "current_border_width": 1,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                       "height": 1032,
+                                       "width": 947,
+                                       "x": 966,
+                                       "y": 7
+                                    },
+                                    "name": "Netflix",
+                                    "percent": 1,
+                                    "swallows": [
+                                       {
+                                        "class": "^Google\\-chrome$"
+                                       }
+                                    ],
+                                    "type": "con"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 434,
+                       "width": 652,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "termite",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                        "class": "^Termite$",
+                        "instance": "^termite$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
