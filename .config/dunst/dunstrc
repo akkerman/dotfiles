@@ -1,49 +1,52 @@
+# vim: ft=dosini
+
 [global]
-    alignment = left
-    bounce_freq = 0
-    follow = mouse
-    font = "Droid Sans 8"
-    format = "<b>%s</b>\n%b\n\n<small>%a</small>"
-    frame_color = "#901d1f21"
-    frame_width = 0
-    geometry = "0x5-15+35"
-    horizontal_padding = 8
-    icon_position = left
-    idle_threshold = 120
-    ignore_newline = no
-    indicate_hidden = yes
-    line_height = 0
-    markup = full
-    padding = 8
-    separator_color = "#000000"
-    separator_height = 5
-    show_age_threshold = 60
-    startup_notification = true
-    sticky_history = yes
-    transparency = 7
-    word_wrap = yes
+alignment = left
+bounce_freq = 0
+follow = mouse
+font = SourceCode Pro 10
+format = "<b>%s</b>\n%b\n\n<small>%a</small>"
+frame_color = "#901d1f21"
+frame_width = 0
+geometry = "0x5-15+35"
+horizontal_padding = 8
+icon_position = left
+idle_threshold = 120
+ignore_newline = no
+indicate_hidden = yes
+line_height = 0
+markup = full
+padding = 8
+separator_color = "#000000"
+separator_height = 5
+show_age_threshold = 60
+startup_notification = true
+sticky_history = yes
+transparency = 7
+word_wrap = yes
 
 [experimental]
-    per_monitor_dpi = true
+; per_monitor_dpi = true
 
 [shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
 
 [urgency_low]
-    background = "#1d1f21"
-    foreground = "#707880"
-    timeout = 5
+background = "#1d1f21"
+foreground = "#707880"
+timeout = 5
 
 [urgency_normal]
-    background = "#1d1f21"
-    foreground = "#c5c8c6"
-    timeout = 20
+background = "#1d1f21"
+foreground = "#c5c8c6"
+timeout = 20
 
 [urgency_critical]
-    background = "#1d1f21"
-    foreground = "#cc6666"
-    timeout = 0
+background = "#1d1f21"
+foreground = "#cc6666"
+timeout = 0
+
 
