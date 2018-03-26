@@ -22,7 +22,7 @@ alias dot=config
 
 # edit
 alias vim.='vim .'
-alias v='vim'
+alias v='f -t -e vim -b viminfo'
 
 # edit config files
 alias cfz='vim ~/.zshrc'

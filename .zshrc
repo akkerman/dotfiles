@@ -50,8 +50,7 @@ ZSH_THEME="avit"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose bower grunt z npm yarn aws httpie pip tmux tmuxinator)
-# plugins=(git gitignore git-flow docker docker-compose z)
+plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose npm yarn aws httpie pip tmux tmuxinator fasd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,3 +106,5 @@ export NVM_DIR="/home/akkerman/.nvm"
 
 source ~/.shortcuts
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
