@@ -1,4 +1,4 @@
-# This is a sample commands.py.  You can add your own commands here.
+""" This is a sample commands.py.  You can add your own commands here. """
 #
 # Please refer to commands_full.py for all the default commands and a complete
 # documentation.  Do NOT add them all here, or you may end up with defunct
@@ -60,3 +60,38 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
+
+class fasd(Command):
+    """
+    :fasd
+
+    Jump to given directory using fasd
+    URL: https://github.com/Vifon/fasd
+    URL: https://github.com/clvv/fasd
+    URL: https://youtu.be/V9T2G7eGzgc
+    """
+    def execute(self):
+        """ do stuff """
+        import subprocess
+        arg = self.rest(1)
+        if arg:
+            directory = subprocess.check_output(["fasd", "-d"]+arg.split(), universal_newlines=True).strip()
+            self.fm.cd(directory)
+
+class fasd_fuzzy(Command):
+    """
+    :fasd_fzf
+    """
+    def execute(self):
+        import subprocess
+        command = "fasd | fzf -e -i | awk '{print $2}'"
+        fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
+        stdout, stderr = fzf.communicate()
+        if fzf.returncode == 0:
+            fzf_file = os.path.abspath(stdout.decode('utf-8').rstrip('\n'))
+            if os.path.isdir(fzf_file):
+                self.fm.cd(fzf_file)
+            else:
+                self.fm.select_file(fzf_file)
+
+
