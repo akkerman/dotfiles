@@ -294,8 +294,9 @@ for_window [instance="spotify"] move scratchpad;
 for_window [instance="spotify"] move scratchpad; [instance="spotify"] scratchpad show; move position 50px 50px; resize shrink height 10000px; resize shrink width 10000px; resize grow height 930; resize grow width 1745; move scratchpad
 bindsym $mod+s [instance="spotify"] scratchpad show
 
+bindsym $mod+Mod1+m exec st -e ncmpcpp -h 192.168.0.20
 ## quick terminal
-exec --no-startup-id $term -n dropdown -e $HOME/.gem/ruby/2.3.0/bin/tmuxinator start remote -n dropdown
+exec --no-startup-id $term -n dropdown -e tmuxinator start remote -n dropdown
 # making it as small as possible mostly ends op in 75x50, I want centered with 150px margin
 # 1920x1080 -> 1680x830 -> 1595x720
 for_window [instance="dropdown"] border pixel 0
@@ -307,7 +308,7 @@ bindsym $mod+t [instance="dropdown"] scratchpad show
 set $mode_monitor Monitor Setup: (l) left, (r) right, (t) two, (o) off,  (a) above
 
 # bindsym $mod+Shift+m mode "$mode_monitor"
-bindsym $mod+Shift+m exec $HOME/.config/rofi/monitor_layout.sh
+bindsym $mod+Shift+m exec $HOME/.config/rofi/chscreen.sh  && $HOME/.config/polybar/launch.sh
 
 mode "$mode_monitor" {
     bindsym l exec $HOME/bin/chscreen left  ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
@@ -325,3 +326,5 @@ mode "$mode_monitor" {
 # / monior setup }}}
 
 # vim:ft=i3config fdm=marker fdc=4 fcs=fold\:\ :
+
+
