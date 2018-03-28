@@ -78,7 +78,18 @@ tray-padding = 9
 
 [bar/performance]
 inherit = bar/base
-modules-center = filesystem memory cpu temperature temperature-cpu battery apt-updates
+bottom = true
+modules-left = netspeed
+modules-center = memory cpu temperature temperature-cpu battery apt-updates
+modules-right = filesystem
+
+
+[module/netspeed]
+type = custom/script
+exec = ~/bin/netspeed.sh eth0
+tail = true
+label = %{F#9081a2be}eth0%{F-}: %output%
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -91,6 +102,7 @@ interval = 25
 mount-0 = /
 mount-1 = /stronghold
 mount-2 = /opt2
+mount-3 = /2t
 
 label-mounted = %{F#9081a2be}%mountpoint%%{F-}: %percentage_used%%
 
@@ -342,7 +354,7 @@ click-left = playerctl play-pause
 [module/apt-updates]
 type = custom/script
 exec = ~/.config/polybar/module_apt.py
-interval = 600
+interval = 60
 
 format-prefix = " "
 format-prefix-foreground = ${colors.danger}
