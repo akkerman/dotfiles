@@ -259,7 +259,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
-# Application specific settings {{{
 # Open applications on specific workspace
 assign [class="Gitg"] $workspace3
 assign [class="TelegramDesktop"] $workspace7
@@ -273,7 +272,7 @@ for_window [class="Virtualbox Machine"] floating enable;
 
 # move workspace
 bindsym $mod+m move workspace to output left
-bindsym $mod+g exec google-chrome
+bindsym $mod+g exec google-chrome --profile-directory=Default
 bindsym $mod+v exec gvim
 
 # open on startup
@@ -304,26 +303,9 @@ for_window [instance="dropdown"] move scratchpad; [instance="dropdown"] scratchp
 bindsym $mod+t [instance="dropdown"] scratchpad show
 
 
-# monitor setup {{{
-set $mode_monitor Monitor Setup: (l) left, (r) right, (t) two, (o) off,  (a) above
-
-# bindsym $mod+Shift+m mode "$mode_monitor"
 bindsym $mod+Shift+m exec $HOME/.config/rofi/chscreen.sh  && $HOME/.config/polybar/launch.sh
-
-mode "$mode_monitor" {
-    bindsym l exec $HOME/bin/chscreen left  ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
-    bindsym r exec $HOME/bin/chscreen right ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
-    bindsym t exec $HOME/bin/chscreen two   ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
-    bindsym o exec $HOME/bin/chscreen off   ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
-    bindsym a exec $HOME/bin/chscreen top   ; exec --no-startup-id $HOME/.config/polybar/launch.sh ; mode "default"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-
-
-# / monior setup }}}
+bindsym $mod+Mod1+h exec $term -n htop -e htop
+bindsym $mod+r exec $term -e ranger
 
 # vim:ft=i3config fdm=marker fdc=4 fcs=fold\:\ :
 
