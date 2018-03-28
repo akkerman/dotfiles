@@ -39,7 +39,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-set $term st
+set $term /usr/local/bin/st
 # bindsym $mod+Return split h ;; exec $term
 # bindsym $mod+Shift+Return split v ;; exec $term
 bindsym $mod+Return exec $term
