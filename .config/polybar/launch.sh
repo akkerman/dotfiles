@@ -10,6 +10,12 @@ PRIMARY_DISPLAY="$(xrandr -q | grep " connected primary" | cut -d' ' -f1)"
 SECONDARY_DISPLAY="$(xrandr -q | grep " connected" | grep -v "primary" | cut -d' ' -f1)"
 
 if [[ -z "$PRIMARY_DISPLAY" ]]; then
+    # in case there is no primary display and there is possibly a 'default' display
+    # swap the content of the variables
+    read PRIMARY_DISPLAY SECONDARY_DISPLAY <<< "$SECONDARY_DISPLAY $PRIMARY_DISPLAY"
+fi
+
+if [[ -z "$PRIMARY_DISPLAY" ]]; then
     echo "primary  : NONE"
 else
     echo "primary  : $PRIMARY_DISPLAY"
@@ -22,6 +28,5 @@ else
     echo "secondary $SECONDARY_DISPLAY"
     MONITOR="$SECONDARY_DISPLAY" polybar secondary &
 fi
-
 
 echo "Bars launched..."
