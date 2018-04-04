@@ -44,6 +44,7 @@ alias ltr='ls -ltr'
 
 # change directory
 alias cde='z energieonderbrekingen.nl'
+alias zen='z energieonderbrekingen.nl'
 
 
 # send alert upon command completion
