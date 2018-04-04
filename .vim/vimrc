@@ -22,8 +22,9 @@ Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'        " enable repeat for supported plugins
 Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
-Plugin 'tpope/vim-unimpaired'    " pairs of handy bracket mappings
-Plugin 'tpope/vim-vinegar'       " better use of netrw
+Plugin 'tpope/vim-projectionist'
+" Plugin 'tpope/vim-unimpaired'    " pairs of handy bracket mappings
+" Plugin 'tpope/vim-vinegar'       " better use of netrw
 
 Plugin 'airblade/vim-gitgutter'
 
@@ -41,8 +42,8 @@ Plugin 'Valloric/YouCompleteMe'  " code-completion engine for Vim
 
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'wincent/command-t'
 
 Plugin 'SirVer/ultisnips'
@@ -62,7 +63,7 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'chr4/nginx.vim'
 
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 
 Plugin 'mileszs/ack.vim' " ack-grep
 
@@ -73,6 +74,8 @@ Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'vim-python/python-syntax'
 
 Plugin 'vim-scripts/vim-auto-save'
+
+Plugin 'francoiscabrol/ranger.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()             " required for vundle }}}2
 
@@ -97,8 +100,8 @@ set number
 " splits
 set splitright
 " tweaks for browsing
-let g:netrw_banner = 1
-let g:netrw_list_hide = netrw_gitignore#Hide()
+" let g:netrw_banner = 1
+" let g:netrw_list_hide = netrw_gitignore#Hide()
 let g:netrw_liststyle = 3 " treeview
 " finding files # https://www.youtube.com/watch?v=XA2WjJbmmoM
 set path+=**
@@ -190,10 +193,10 @@ nmap <leader>gg :GitGutterSignsToggle<CR>
 let g:jsx_ext_required = 0
 " }}}
 " NERDTree Tagbar {{{
-let NERDTreeIgnore=['node_modules', '__pycache__', '\.pyc$', 'env$[[dir]]']
-nmap <leader>f :NERDTreeFind<CR><bar><c-w><c-p>
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+" let NERDTreeIgnore=['node_modules', '__pycache__', '\.pyc$', 'env$[[dir]]']
+" nmap <leader>f :NERDTreeFind<CR><bar><c-w><c-p>
+" nmap <F7> :NERDTreeToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 " }}}
 " python-syntax {{{
 let g:python_highlight_string_format=1
@@ -221,8 +224,6 @@ let g:markdown_fenced_languages = ["yaml", "java","sh", "javascript", "html", "a
 " vim-auto-save {{{
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
-"}}}
-
 "}}}
 " automate stuff {{{
 
