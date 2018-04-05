@@ -33,6 +33,7 @@ alias cfs='vim ~/.shortcuts && sos'
 alias cfp='vim ~/.config/polybar/*'
 alias cfr='vim ~/.config/ranger/rc.conf ~/.config/ranger/scope.sh'
 alias cfc='vim ~/.config/compton/compton.conf'
+alias cfd='vim ~/.config/dunst/dunstrc'
 
 # source files
 alias sos='source ~/.shortcuts && echo "shortcuts loaded"'
@@ -51,12 +52,6 @@ alias zen='z energieonderbrekingen.nl'
 alias alert='notify-send -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
-# alias mine='sudo chown -R akkerman.akkerman *'
-alias dfree='df ; echo ; df -h'
-alias tail0='clear ; tail -f -n0'
-alias psgrep='ps -ef | grep -v grep | grep -i --color=auto'
-alias wgetit='wget --recursive --level=1 --no-clobber --page-requisites --html-extension --convert-links --no-parent'
-
 function isup() {
     sudo nmap  -sn  192.168.0.1-10 192.168.0.100-150 192.168.0.234 | sed "s/\(Nmap [scan|done]\)/\n\1/g"
 }
@@ -70,3 +65,11 @@ function dtemp() {
 function mkcd() {
     mkdir $1 && cd $1
 }
+
+
+# alias mine='sudo chown -R akkerman.akkerman *'
+alias dfree='df ; echo ; df -h'
+alias tail0='clear ; tail -f -n0'
+alias psgrep='ps -ef | grep -v grep | grep -i --color=auto'
+alias wgetit='wget --recursive --level=1 --no-clobber --page-requisites --html-extension --convert-links --no-parent'
+alias https='http --default-scheme=https'
