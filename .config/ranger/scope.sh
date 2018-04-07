@@ -101,7 +101,8 @@ handle_extension() {
             exit 1 ;;
 
         markdown|md)
-            ansimd "${FILE_PATH}" && { dump | trim; exit 5; }
+            # ansimd "${FILE_PATH}" && { dump | trim; exit 5; }
+            sed -n '/^$/!{s/<[^>]*>//g;p;}' "${FILE_PATH}" |  ansimd /dev/stdin && { dump | trim; exit 5; }
             exit 2;;
     esac
 }
