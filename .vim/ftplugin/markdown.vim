@@ -6,7 +6,8 @@ set nolist
 set spelllang=nl
 setlocal spell
 
-set makeprg=markdown-pdf\ -s\ ~/Documents/creetion-markdown-template.css\ %
+" set makeprg=markdown-pdf\ -s\ ~/Documents/creetion-markdown-template.css\ %
+set makeprg=pandoc\ %\ -s\ -o\ %.pdf
 
 let g:tagbar_type_markdown = {
     \ 'ctagstype' : 'markdown',
