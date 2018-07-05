@@ -29,7 +29,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'vim-scripts/argtextobj.vim'  " provides a text object for function arguments
-Plugin 'michaeljsmith/vim-indent-object' " provides a text object based on indentation level
+Plugin 'michaeljsmith/vim-Indent-object' " provides a text object based on indentation level
 
 Plugin 'w0rp/ale'                " syntax check
 
@@ -66,6 +66,8 @@ Plugin 'chr4/nginx.vim'
 " Plugin 'majutsushi/tagbar'
 
 Plugin 'mileszs/ack.vim' " ack-grep
+
+Plugin 'artur-shaik/vim-javacomplete2'
 
 Plugin 'digitaltoad/vim-pug'
 
@@ -167,7 +169,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
-let g:ale_linters = { 'javascript': ['eslint']}
+let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_fixers = { 'javascript': ['importjs','eslint'] }
 
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 1
@@ -179,10 +182,13 @@ let g:ale_echo_delay = 500
 
 nmap <silent> <F2> <Plug>(ale_next_wrap)
 nmap <silent> <F3> <Plug>(ale_previous_wrap)
+nmap <leader>af <Plug>(ale_fix)
+nmap <leader>an <Plug>(ale_next_wrap)
+nmap <leader>ap <Plug>(ale_previous_wrap)
 " }}}
 " CommandT {{{
 nmap <leader>l :CommandTBuffer<CR>
-let g:CommandTWildIgnore=&wildignore . ",*.pyc,bower_components,*/node_modules"
+let g:CommandTWildIgnore=&wildignore .  ",*.pyc,bower_components,*/node_modules,*/build,*/gradle"
 " }}}
 " fugitive {{{
 nmap <leader>gs :Gstatus<CR>
@@ -219,12 +225,14 @@ let g:ycm_key_list_previous_completion = ['<C-k>']
 let g:ycm_key_list_accept_completion = ['<C-y>']
 " }}}
 " vim-markdown {{{
-let g:markdown_fenced_languages = ["yaml", "java","sh", "javascript", "html", "abap"]
+let g:markdown_fenced_languages = ["yaml", "java","sh", "javascript", "html", "abap", "groovy", "xml"]
 " }}}
 " vim-auto-save {{{
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 "}}}
+
+" }}}
 " automate stuff {{{
 
 augroup newfile
@@ -240,11 +248,12 @@ augroup my_stuff
     autocmd!
     " edit vimrc
     autocmd bufwritepost $MYVIMRC source $MYVIMRC " source vimrc after saving
-    nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+    nnoremap <leader>ev :tabe $MYVIMRC<CR>
     nnoremap <leader>sv :source $MYVIMRC<CR>
 
     " Jasmine related
     autocmd BufReadPost,BufNewFile *.spec.js set filetype=javascript syntax=jasmine
+    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 augroup END
 
 function! AdaptColorscheme()
@@ -277,6 +286,7 @@ iabbrev widht width
 iabbrev lenght length
 iabbrev heigth height
 iabbrev eon energieonderbrekingen
+iabbrev edl // eslint-disable-line
 
 " }}}
 " Jasmine spec {{{
