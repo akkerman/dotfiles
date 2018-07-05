@@ -50,13 +50,13 @@ ZSH_THEME="avit"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose npm yarn aws httpie pip tmux tmuxinator fasd)
+plugins=(git gitignore git-flow vagrant ssh-agent docker docker-compose npm yarn aws httpie pip tmux tmuxinator fasd zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/akkerman/anaconda3/bin:/home/akkerman/bin:/home/akkerman/.local/bin:opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/bin:/home/akkerman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/akkerman/.gem/ruby/2.3.0/bin:/home/akkerman/anaconda3/bin:/home/akkerman/bin:/home/akkerman/.local/bin:opt/java/bin:/opt/play:/opt/scala/bin:/opt/sbt/bin:/home/akkerman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -106,5 +106,6 @@ export NVM_DIR="/home/akkerman/.nvm"
 
 source ~/.shortcuts
 
+ eval $(lesspipe)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
