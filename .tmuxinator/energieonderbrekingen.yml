@@ -1,7 +1,7 @@
-# ~/.tmuxinator/fp-js.yml
+# ~/.tmuxinator/energieonderbrekingen.yml
 
 name: Energie Onderbrekingen
-root: ~/git/energieonderbrekingen/ea-development-vm
+root: ~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl
 
 on_project_first_start: vagrant up
 on_project_stop: vagrant halt
@@ -14,7 +14,7 @@ windows:
       layout: main-horizontal
       panes:
         - vim:
-          - vim +NERDTree Vagrantfile
+          - vim Vagrantfile
         - ctop:
           - vagrant ssh
           - ctop
@@ -22,23 +22,8 @@ windows:
 
   - project:
       pre: export PYTHONPATH=~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl/shared
-      root: ~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl
       layout: main-horizontal
       panes:
         - vim:
-          - vim +NERDTree
-        - # zsh
-
-  - documentation:
-      root: ~/Documents/enexis-energy-alert
-      layout: 3c14,239x57,0,0[239x48,0,0,25,239x8,0,49,26]
-      panes:
-        - vim +NERDTree
-        - guard
-
-  - test-api:
-      root: ~/git/energieonderbrekingen/test-api
-      layout: even-horizontal
-      panes:
-        - docker-compose up
+          - vim
         - # zsh
