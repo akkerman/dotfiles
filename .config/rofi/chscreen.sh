@@ -4,24 +4,20 @@ OPTIONS=()
 COMMANDS=()
 
 declare -i index=0
-OPTIONS[$index]="Cancel"
-COMMANDS[$index]="true"
+OPTIONS[$index]="--- right -->"
+COMMANDS[$index]="xrandr --output eDP-1 --auto --output DP-1 --primary --auto --right-of eDP-1"
 
 index+=1
-OPTIONS[$index]="Two Screens"
-COMMANDS[$index]="xrandr --output DVI-I-0 --auto --output DVI-D-0 --primary --auto --right-of DVI-I-0"
+OPTIONS[$index]="<-- left ----"
+COMMANDS[$index]="xrandr --output eDP-1 --auto --output DP-1 --primary --auto --left-of eDP-1"
 
 index+=1
-OPTIONS[$index]="Left Screen Only"
-COMMANDS[$index]="xrandr --output DVI-I-0 --primary --auto --output DVI-D-0 --off"
+OPTIONS[$index]="off"
+COMMANDS[$index]="xrandr --output eDP-1 --primary --auto --output DP-1 --off"
 
 index+=1
-OPTIONS[$index]="Right Screen Only"
-COMMANDS[$index]="xrandr --output DVI-I-0 --off --output DVI-D-0 --primary --auto"
-
-index+=1
-OPTIONS[$index]="Clone"
-COMMANDS[$index]="xrandr --output DVI-I-0 --auto --output DVI-D-0 --auto --same-as DVI-I-0"
+OPTIONS[$index]="clone"
+COMMANDS[$index]="xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --mode 1920x1080 --same-as eDP-1"
 
 function echo_options()
 {
