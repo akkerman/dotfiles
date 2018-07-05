@@ -16,6 +16,7 @@ ignore_newline = no
 indicate_hidden = yes
 line_height = 0
 markup = full
+max_icon_size = 64
 padding = 8
 separator_color = "#000000"
 separator_height = 5
