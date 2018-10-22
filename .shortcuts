@@ -13,7 +13,9 @@ alias gc='git commit'
 alias gco='git checkout'
 
 # tmux
+alias tmux='tmux -u'
 alias tpwd='tmux new -s "$(basename $PWD)"'
+
 
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
