@@ -1,29 +1,29 @@
 # ~/.tmuxinator/energieonderbrekingen.yml
 
 name: Energie Onderbrekingen
-root: ~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl
+root: ~/git/energieonderbrekingen/development-vm/energieonderbrekingen.nl
 
 on_project_first_start: vagrant up
 on_project_stop: vagrant halt
-tmux_options: -f ~/.tmuxinator/tmux.override.conf
+tmux_options: -f ~/.config/tmuxinator/tmux.override.conf
 
 startup_window: project
 
 windows:
-  - vm:
-      layout: main-horizontal
-      panes:
-        - vim:
-          - vim Vagrantfile
-        - ctop:
-          - vagrant ssh
-          - ctop
-        - # clear
-
   - project:
-      pre: export PYTHONPATH=~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl/shared
-      layout: main-horizontal
+      pre: export PYTHONPATH=~/git/energieonderbrekingen/development-vm/energieonderbrekingen.nl/shared
+      layout: main-vertical
       panes:
-        - vim:
-          - vim
-        - # zsh
+        - vim
+        - testapp:
+          - cd frontend/app
+          - yarn test
+        - testapi:
+          - cd frontend/api
+          - yarn test
+        - run:
+          - eval $(./docker-eonl.sh env dev)
+          - docker-compose start mosquitto mongo
+          - cd frontend/app
+          - yarn dev
+
