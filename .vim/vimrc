@@ -16,6 +16,8 @@ Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'cocopon/iceberg.vim'
+Plugin 'cormacrelf/vim-colors-github'
+Plugin 'vim-scripts/Fruidle'
 
 Plugin 'tpope/vim-commentary'    " gc adds comments
 Plugin 'tpope/vim-fugitive'      " for git commands and branch in statusbar
@@ -75,7 +77,9 @@ Plugin 'tmhedberg/SimpylFold' " Python folding
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'vim-python/python-syntax'
 
-Plugin 'vim-scripts/vim-auto-save'
+" Plugin 'vim-scripts/vim-auto-save'
+
+Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'francoiscabrol/ranger.vim'
 " All of your Plugins must be added before the following line
@@ -144,9 +148,12 @@ colors iceberg
 
 if has("gui_running")
     set guifont=Source\ Code\ Pro\ 10
+    set background=light
+    colors fruidle
 else
     highlight clear CursorLine
     highlight Normal ctermbg=none
+    highlight Conceal ctermbg=none
     highlight LineNr ctermbg=none
     highlight CursorLineNr ctermbg=none
     highlight SpecialKey ctermbg=none
@@ -187,7 +194,8 @@ nmap <leader>an <Plug>(ale_next_wrap)
 nmap <leader>ap <Plug>(ale_previous_wrap)
 " }}}
 " CommandT {{{
-nmap <leader>l :CommandTBuffer<CR>
+nmap <leader>l :CommandTBuffer<cr>
+nmap <leader>\ :CommandT<cr>
 let g:CommandTWildIgnore=&wildignore .  ",*.pyc,bower_components,*/node_modules,*/build,*/gradle"
 " }}}
 " fugitive {{{
@@ -208,9 +216,14 @@ let g:jsx_ext_required = 0
 let g:python_highlight_string_format=1
 let g:python_highlight_string_formatting=1
 " }}}
+" ranger {{{
+let g:ranger_map_keys = 0
+map <leader>r :Ranger<CR>
+" }}}
 " Tern {{{
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_move"
+nmap <leader>f :TernDef<CR>
 " }}}
 " UltiSnips {{{
 " let g:UltiSnipsExpandTrigger="<c-j>"
@@ -259,6 +272,7 @@ augroup END
 function! AdaptColorscheme()
     highlight clear CursorLine
     highlight Normal ctermbg=none
+    highlight Conceal ctermbg=none
     highlight LineNr ctermbg=none
     highlight Folded ctermbg=none
     highlight NonText ctermbg=none
@@ -277,6 +291,8 @@ autocmd ColorScheme * call AdaptColorscheme()
 nnoremap <leader>n :set hlsearch!<cr>
 " format json
 nnoremap <leader>j :%!jq '.'<cr>:set ft=json<cr>
+" format xml
+nnoremap <leader>x :%!xmllint --format -<cr>
 " copy selection to clipboard
 vnoremap <C-c> "+y
 
