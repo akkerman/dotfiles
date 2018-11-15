@@ -70,7 +70,8 @@ modules-right = i3
 [bar/primary]
 inherit = bar/base
 modules-left = i3
-modules-center=spotify vm-eonl vm-win vm-minikube
+; modules-center=spotify vm-eonl vm-dsp vm-win vm-minikube
+modules-center=spotify
 modules-right = backlight-acpi volume wlan apt-updates battery date
 
 tray-position = right
@@ -364,6 +365,11 @@ format-underline = ${colors.underline_danger}
 type = custom/script
 exec = ~/.config/polybar/module_vmip.py ea-dev "%{u#90b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be} %ip%%{F-}"
 interval = 30
+
+[module/vm-dsp]
+type = custom/script
+exec = ~/.config/polybar/module_vmip.py dsp "%{u#90b5bd68}%{F#81a2be}%{F-} %ip%%{u-}" "%{F#81a2be} %ip%%{F-}"
+interval = 32
 
 [module/vm-win]
 type = custom/script
