@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'cocopon/iceberg.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'cormacrelf/vim-colors-github'
 Plugin 'vim-scripts/Fruidle'
 
@@ -25,6 +26,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'        " enable repeat for supported plugins
 Plugin 'tpope/vim-surround'      " ys,cs,ds - add,change,del surround
 Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-abolish'
 " Plugin 'tpope/vim-unimpaired'    " pairs of handy bracket mappings
 " Plugin 'tpope/vim-vinegar'       " better use of netrw
 
@@ -144,7 +146,8 @@ set laststatus=2   " always on
 set mouse=a
 
 set t_Co=256
-colors iceberg
+" colors iceberg
+colors gruvbox
 
 if has("gui_running")
     set guifont=Source\ Code\ Pro\ 10
@@ -176,8 +179,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
-let g:ale_linters = { 'javascript': ['eslint'] }
-let g:ale_fixers = { 'javascript': ['importjs','eslint'] }
+let g:ale_linters = { 'javascript': ['eslint'], 'dockerfile': ['hadolint'], 'yaml': ['yamllint'] }
+let g:ale_fixers = { 'javascript': ['eslint'] }
 
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 1
