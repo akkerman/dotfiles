@@ -219,10 +219,12 @@ bindsym $mod+Shift+Right move right
 # }}}2
 # resize window {{{2
 # (you can also use the mouse for that)
-bindsym $mod+Shift+i		resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
-bindsym $mod+Shift+y		resize shrink width 10 px or 10ppt
-bindsym $mod+Shift+u		resize shrink height 10 px or 10 ppt
+
+# resize windows (check LukeSmithxyz on github)
+bindsym $mod+Shift+i exec --no-startup-id "bash ~/.config/i3/resize up"
+bindsym $mod+Shift+o exec --no-startup-id "bash ~/.config/i3/resize right"
+bindsym $mod+Shift+y exec --no-startup-id "bash ~/.config/i3/resize left"
+bindsym $mod+Shift+u exec --no-startup-id "bash ~/.config/i3/resize down"
 # }}}2
 # }}}
 
