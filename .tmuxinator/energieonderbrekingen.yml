@@ -1,7 +1,7 @@
 # ~/.tmuxinator/energieonderbrekingen.yml
 
 name: Energie Onderbrekingen
-root: ~/git/energieonderbrekingen/development-vm/energieonderbrekingen.nl
+root: ~/git/energieonderbrekingen/ea-development-vm/energieonderbrekingen.nl
 
 on_project_first_start: vagrant up
 on_project_stop: vagrant halt
