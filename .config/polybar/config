@@ -70,8 +70,7 @@ modules-right = i3
 [bar/primary]
 inherit = bar/base
 modules-left = i3
-; modules-center=spotify vm-eonl vm-dsp vm-win vm-minikube
-modules-center=spotify
+modules-center=spotify vm-eonl vm-dsp vm-win vm-minikube
 modules-right = backlight-acpi volume wlan apt-updates battery date
 
 tray-position = right
@@ -87,9 +86,9 @@ modules-right = filesystem
 
 [module/netspeed]
 type = custom/script
-exec = ~/bin/netspeed.sh eth0
+exec = ~/.config/polybar/netspeed.sh wlp58s0
 tail = true
-label = %{F#9081a2be}eth0%{F-}: %output%
+label = %{F#9081a2be}wlan%{F-}: %output%
 
 
 [module/xwindow]
@@ -195,6 +194,8 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.underline_default}
 label = %percentage%%
+click-left = "notify-send -i NONE -a "TOP CPU"  "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
+
 
 [module/memory]
 type = internal/memory
