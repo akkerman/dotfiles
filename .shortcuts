@@ -68,6 +68,15 @@ function mkcd() {
     mkdir $1 && cd $1
 }
 
+# show description of a http status
+function httpstatus() {
+    if [ -z $1 ]; then
+        w3m -dump -no-graph https://httpstatuses.com
+    else
+        w3m -dump -no-graph https://httpstatuses.com/$1 | sed -n '/-----/q;p' | grep -v httpstatuses.com | grep --color -E "$1|"
+    fi
+}
+
 
 # alias mine='sudo chown -R akkerman.akkerman *'
 alias dfree='df ; echo ; df -h'
