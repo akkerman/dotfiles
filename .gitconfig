@@ -39,6 +39,7 @@
     coa = commit -a
     coma = commit -am
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	pullall = submodule foreach --recursive 'git checkout develop && git pull'
 [color]
     ui = always
 [diff]
