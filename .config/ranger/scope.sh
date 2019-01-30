@@ -102,7 +102,10 @@ handle_extension() {
 
         markdown|md)
             # ansimd "${FILE_PATH}" && { dump | trim; exit 5; }
-            sed -n '/^$/!{s/<[^>]*>//g;p;}' "${FILE_PATH}" |  ansimd /dev/stdin && { dump | trim; exit 5; }
+            # sed -n '/^$/!{s/<[^>]*>//g;p;}' "${FILE_PATH}" |  ansimd /dev/stdin && { dump | trim; exit 5; }
+            export COLUMNS="${PV_WIDTH}"
+            mdv -c "${PV_WIDTH}" "${FILE_PATH}" && { dump ; exit 5; }
+
             exit 2;;
     esac
 }
