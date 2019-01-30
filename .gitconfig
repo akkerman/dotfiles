@@ -31,15 +31,18 @@
     stat = status
     st = status
 
+    uncommit = reset --soft HEAD^
     unstage = reset HEAD --
     revert = reset HEAD --
-    kraken = !gitkraken -p `pwd` >/dev/null 2>&1 &
+    stages = diff --cached
     amend = commit --amend
 
     coa = commit -a
     coma = commit -am
-	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
-	pullall = submodule foreach --recursive 'git checkout develop && git pull'
+    ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+    pullall = submodule foreach --recursive 'git checkout develop && git pull'
+
+    ctags = "!.git/hooks/ctags"
 [color]
     ui = always
 [diff]

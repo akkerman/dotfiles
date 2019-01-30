@@ -16,7 +16,6 @@ alias gco='git checkout'
 alias tmux='tmux -u'
 alias tpwd='tmux new -s "$(basename $PWD)"'
 
-
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dot=config
@@ -28,12 +27,11 @@ alias v='f -t -e vim -b viminfo'
 
 # edit config files
 alias cfz='vim ~/.zshrc'
-alias cfi='vim ~/.config/i3/config'
-alias cft='vim ~/.config/termite/config'
+alias cfi='vim -S ~/.config/i3/Session.vim'
 alias cfv='vim ~/.vim/vimrc'
 alias cfs='vim ~/.shortcuts && sos'
 alias cfp='vim ~/.config/polybar/*'
-alias cfr='vim ~/.config/ranger/rc.conf ~/.config/ranger/scope.sh'
+alias cfr='vim ~/.config/ranger/scope.sh ~/.config/ranger/rc.conf'
 alias cfc='vim ~/.config/compton/compton.conf'
 alias cfd='vim ~/.config/dunst/dunstrc'
 
@@ -42,8 +40,9 @@ alias sos='source ~/.shortcuts && echo "shortcuts loaded"'
 alias soz='source ~/.zshrc'
 
 # listing
-alias l=' ls -lAF --group-directories-first'
-alias ltr='ls -ltr'
+alias ls='ls --color'
+alias l=' ls -lF --group-directories-first'
+alias la=' ls -lAF --group-directories-first'
 
 # change directory
 alias cde='z energieonderbrekingen.nl'
@@ -77,10 +76,14 @@ function httpstatus() {
     fi
 }
 
-
 # alias mine='sudo chown -R akkerman.akkerman *'
 alias dfree='df ; echo ; df -h'
 alias tail0='clear ; tail -f -n0'
 alias psgrep='ps -ef | grep -v grep | grep -i --color=auto'
 alias wgetit='wget --recursive --level=1 --no-clobber --page-requisites --html-extension --convert-links --no-parent'
 alias https='http --default-scheme=https'
+alias celar=clear
+alias lcear=clear
+alias thumb='sxiv -ft *'
+
+alias ccat='highlight -O ansi'
