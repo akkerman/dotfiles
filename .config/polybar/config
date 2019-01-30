@@ -13,7 +13,7 @@
 danger = #90cc6666
 warn = #90f0c674
 success = #90b5bd68
-background = #00000000
+background = #EE282828
 background_focused = #90373b41
 background_visible = #40373b41
 background_danger = #90a54242
@@ -113,56 +113,46 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-format-margin = 2
+format-margin = 3
 index-sort = true
 wrapping-scroll = false
 
 pin-workspaces = true
 
-label-focused = %name%
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+label-focused = %icon%
 label-focused-underline = ${colors.underline_default}
 label-focused-background = ${colors.background_focused}
-label-focused-padding = 2
+label-focused-padding = 3
 label-focused-margin = 1
 
-label-unfocused = %name%
-label-unfocused-padding = 2
+label-unfocused = %icon%
 label-unfocused-underline = #00000000
+; label-unfocused-underline = ${colors.background_focused}
+label-unfocused-padding = 3
 label-unfocused-margin = 1
 
-label-urgent = %name%
+label-urgent = %icon%
 label-urgent-background = ${colors.background_danger}
 label-urgent-underline = ${colors.underline_danger}
-label-urgent-padding = 2
+label-urgent-padding = 3
 label-urgent-margin = 1
 
-label-visible = %name%
+label-visible = %icon%
 label-visible-underline = ${colors.underline_visible}
 label-visible-background = ${colors.background_visible}
-label-visible-padding = 2
+label-visible-padding = 3
 label-visible-margin = 1
-
-[module/mpd]
-type = internal/mpd
-
-format-online = <label-song>  <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-icon-prev = 
-icon-seekb = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-seekf = 
-
-icon-random = 
-icon-repeat = 
-
-toggle-on-foreground = ${colors.primary}
-toggle-off-foreground = #66
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -195,7 +185,6 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.underline_default}
 label = %percentage%%
 click-left = "notify-send -i NONE -a "TOP CPU"  "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"
-
 
 [module/memory]
 type = internal/memory
@@ -238,7 +227,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #0a6cf5
+;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -348,7 +337,7 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/spotify]
 type=custom/script
-exec = ~/.config/polybar/spotify.sh  %artist% - %album% - %title% %{F#81a2be}%status%%{F-}
+exec = ~/.config/polybar/spotify.sh
 label = %{F#1db954}%{F-} %output%
 interval = 2
 click-left = playerctl play-pause
